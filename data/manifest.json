@@ -1,0 +1,12 @@
+{
+  "frozen_on": "2026-09-28",
+  "hashes": {
+    "book.json": "815dfe40dfc21ba908add3eacc46e5c17d249e948aea5bb0f1e070c7e605607d",
+    "current_book.json": "d04d6a030c4a998ed27b1088b70cf1a84dac46de4c9289fa94bf76312a07cfe8",
+    "forward_prices.json": "a1fdc75f867c692fe8b67b9fe4384464b305bb018aabf21397dd55d974d95a34",
+    "historical_book.json": "f79a9070c6232725fc1e17cae3a1077e841dd5322929bc6e48fd1a57de954d8c",
+    "historical_prices.json": "22e9f17848909744c12e16dd83b82384e9bc037b3d26c7465b7aed3bc2a484df",
+    "training_prices.json": "d255b0f220ef7ca1455bd87efe3b96551cbcec2a7c96022873681306fd0417e4"
+  },
+  "vintage_warning": "Historical prices downloaded in 2026; not point-in-time vendor vintages. Quote dates differ from retrieval dates."
+}
