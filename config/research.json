@@ -1,0 +1,15 @@
+{
+  "authored": "2026-09-28",
+  "seed": 20260928,
+  "training_end": "2024-09-27",
+  "study_start": "2024-09-30",
+  "study_end": "2026-09-18",
+  "current_asof": "2026-09-25",
+  "shrinkage": 0.25,
+  "bootstrap_runs": 1000,
+  "block_length": 10,
+  "tail_probability": 0.025,
+  "drift_absolute": 0.01,
+  "drift_relative": 0.25,
+  "trading_days": 252
+}
