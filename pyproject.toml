@@ -1,0 +1,13 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "fabio-investment-research-lab"
+version = "1.0.0"
+description = "Reproducible multi-asset paper-portfolio research, with explicit retrospective limitations"
+requires-python = ">=3.11"
+dependencies = ["numpy==2.3.5", "matplotlib==3.10.8"]
+
+[tool.setuptools]
+packages = ["investment_lab"]
