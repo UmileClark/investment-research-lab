@@ -1,0 +1,13 @@
+measure,value
+historical_nav,126505.90806156858
+current_nav,127555.1209031347
+cash,6123.455342389678
+fees,451.4678967540791
+gross_price_fx_pnl,26957.37595832269
+net_historical_pnl,26505.90806156858
+max_daily_nav_error_eur,0.0
+pnl_identity_error_eur,2.9103830456733704e-11
+daily_marks,515
+transactions,217
+allocation_dates,14
+pending_excluded,True

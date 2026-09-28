@@ -1,0 +1,137 @@
+{
+  "synthetic_bonds": {
+    "2y": {
+      "price": 100.0,
+      "duration": 1.9038643718715775,
+      "convexity": 4.620136593302959
+    },
+    "8y": {
+      "price": 99.99999999999999,
+      "duration": 6.78885542800245,
+      "convexity": 53.77771165626655
+    }
+  },
+  "convexity_scenarios": [
+    {
+      "shock_bp": -200,
+      "exact_return": 0.14717873779368396,
+      "duration_convexity_return": 0.14653265089130232,
+      "error_bp": -6.4608690238163184
+    },
+    {
+      "shock_bp": -100,
+      "exact_return": 0.07065632022666479,
+      "duration_convexity_return": 0.07057743986283783,
+      "error_bp": -0.7888036382695807
+    },
+    {
+      "shock_bp": -50,
+      "exact_return": 0.034626241918087164,
+      "duration_convexity_return": 0.034616498535715585,
+      "error_bp": -0.09743382371578402
+    },
+    {
+      "shock_bp": 0,
+      "exact_return": 0.0,
+      "duration_convexity_return": 0.0,
+      "error_bp": 0.0
+    },
+    {
+      "shock_bp": 50,
+      "exact_return": -0.03328157826735523,
+      "duration_convexity_return": -0.03327205574430892,
+      "error_bp": 0.09522523046305575
+    },
+    {
+      "shock_bp": 100,
+      "exact_return": -0.06527501329970886,
+      "duration_convexity_return": -0.06519966869721118,
+      "error_bp": 0.7534460249768171
+    },
+    {
+      "shock_bp": 200,
+      "exact_return": -0.12561102025996207,
+      "duration_convexity_return": -0.1250215662287957,
+      "error_bp": 5.8945403116636435
+    }
+  ],
+  "key_rate_durations": [
+    {
+      "tenor": 1,
+      "duration_2y": 0.04231581603519885,
+      "duration_8y": 0.04231581603519885
+    },
+    {
+      "tenor": 2,
+      "duration_2y": 1.8615485556701117,
+      "duration_8y": 0.18639899132608662
+    },
+    {
+      "tenor": 5,
+      "duration_2y": 0.0,
+      "duration_8y": 2.910574419964007
+    },
+    {
+      "tenor": 10,
+      "duration_2y": 0.0,
+      "duration_8y": 3.6495656548950706
+    },
+    {
+      "tenor": 30,
+      "duration_2y": 0.0,
+      "duration_8y": 0.0
+    }
+  ],
+  "curve_scenarios": [
+    {
+      "scenario": "parallel +100 bp",
+      "2y_return": -0.01880987104004872,
+      "8y_return": -0.06527501329970908
+    },
+    {
+      "scenario": "bear steepener",
+      "2y_return": -0.004745258082544557,
+      "8y_return": -0.06525448570840298
+    },
+    {
+      "scenario": "bull flattener",
+      "2y_return": 0.0047741340861438,
+      "8y_return": 0.0709596766960201
+    }
+  ],
+  "assumed_ief_duration": 7.2,
+  "assumed_shy_duration": 1.8,
+  "portfolio_duration_before": 0.8133804416950048,
+  "portfolio_duration_after": 0.7053804416950048,
+  "portfolio_duration_change": -0.10799999999999998,
+  "shift_cost_eur": 12.755512090313472,
+  "parallel_yield_rise_break_even_bp": 9.259259259259261,
+  "pending_shift_scenarios": [
+    {
+      "parallel_shock_bp": -100,
+      "incremental_nav_return_after_cost": -0.0011799999999999998,
+      "incremental_eur": -150.51504266569893
+    },
+    {
+      "parallel_shock_bp": -50,
+      "incremental_nav_return_after_cost": -0.0006399999999999999,
+      "incremental_eur": -81.63527737800621
+    },
+    {
+      "parallel_shock_bp": 0,
+      "incremental_nav_return_after_cost": -0.0001,
+      "incremental_eur": -12.755512090313472
+    },
+    {
+      "parallel_shock_bp": 50,
+      "incremental_nav_return_after_cost": 0.0004399999999999999,
+      "incremental_eur": 56.12425319737926
+    },
+    {
+      "parallel_shock_bp": 100,
+      "incremental_nav_return_after_cost": 0.0009799999999999998,
+      "incremental_eur": 125.00401848507198
+    }
+  ],
+  "limitation": "Instantaneous USD price shocks only: no coupon carry, roll-down, tax, FX or ETF reconstitution. All yields and ETF durations are illustrative. Pending shift remains unfilled."
+}

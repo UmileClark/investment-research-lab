@@ -1,0 +1,163 @@
+{
+  "training_start": "2021-09-27",
+  "training_end": "2024-09-27",
+  "observations": 748,
+  "weights_asof": "2026-09-25",
+  "annualised_volatility": 0.131932350168496,
+  "sample_volatility": 0.131932350168496,
+  "daily_var975": 0.015492642406025454,
+  "daily_es975": 0.021742554290607806,
+  "tail_observations": 19,
+  "sample_vol_bootstrap95": [
+    0.11868973236676972,
+    0.13157655783133526,
+    0.14672092899807498
+  ],
+  "bootstrap_runs": 1000,
+  "block_days": 10,
+  "recent_window_start": "2025-09-18",
+  "recent_window_end": "2026-09-18",
+  "recent_volatility": 0.11374171810841298,
+  "primary_estimator": "Sample covariance; shrinkage targets are sensitivity diagnostics only",
+  "sensitivity": [
+    {
+      "target": "constant_correlation",
+      "lambda": 0,
+      "volatility": 0.131932350168496
+    },
+    {
+      "target": "constant_correlation",
+      "lambda": 0.25,
+      "volatility": 0.1289307519034275
+    },
+    {
+      "target": "constant_correlation",
+      "lambda": 0.5,
+      "volatility": 0.12585758837584526
+    },
+    {
+      "target": "constant_correlation",
+      "lambda": 1,
+      "volatility": 0.11947434905696185
+    },
+    {
+      "target": "diagonal",
+      "lambda": 0,
+      "volatility": 0.131932350168496
+    },
+    {
+      "target": "diagonal",
+      "lambda": 0.25,
+      "volatility": 0.12049667666806961
+    },
+    {
+      "target": "diagonal",
+      "lambda": 0.5,
+      "volatility": 0.1078552416673199
+    },
+    {
+      "target": "diagonal",
+      "lambda": 1,
+      "volatility": 0.07654646490367344
+    }
+  ],
+  "rows": [
+    {
+      "ticker": "VT",
+      "weight": 0.3631158871527855,
+      "risk_share": 0.49399751455196506,
+      "recent_risk_share": 0.44173084701344056
+    },
+    {
+      "ticker": "VOO",
+      "weight": 0.08030532882319316,
+      "risk_share": 0.10944813518017082,
+      "recent_risk_share": 0.08485492586232166
+    },
+    {
+      "ticker": "IEUR",
+      "weight": 0.04891554069743024,
+      "risk_share": 0.06802687824614717,
+      "recent_risk_share": 0.06242918421383555
+    },
+    {
+      "ticker": "CME",
+      "weight": 0.044542033748659,
+      "risk_share": 0.036597754817304755,
+      "recent_risk_share": 0.006801235649959713
+    },
+    {
+      "ticker": "NVO",
+      "weight": 0.0,
+      "risk_share": 0.0,
+      "recent_risk_share": 0.0
+    },
+    {
+      "ticker": "RHM.DE",
+      "weight": 0.036085813153701414,
+      "risk_share": 0.02534443859492682,
+      "recent_risk_share": 0.051366945518328114
+    },
+    {
+      "ticker": "SU.PA",
+      "weight": 0.03044451818372552,
+      "risk_share": 0.029621395949432357,
+      "recent_risk_share": 0.0409309692873426
+    },
+    {
+      "ticker": "UL",
+      "weight": 0.020052792370006955,
+      "risk_share": 0.017866495153206062,
+      "recent_risk_share": 0.007943286408184081
+    },
+    {
+      "ticker": "IEF",
+      "weight": 0.08397686525266607,
+      "risk_share": 0.035905548362019486,
+      "recent_risk_share": 0.029240740498972323
+    },
+    {
+      "ticker": "SHY",
+      "weight": 0.11597056215322729,
+      "risk_share": 0.040277666539055915,
+      "recent_risk_share": 0.027130138771039727
+    },
+    {
+      "ticker": "GLD",
+      "weight": 0.07707196873759313,
+      "risk_share": 0.05227642103790566,
+      "recent_risk_share": 0.1325033406849961
+    },
+    {
+      "ticker": "SLV",
+      "weight": 0.0157564643207315,
+      "risk_share": 0.018649850480674912,
+      "recent_risk_share": 0.052670291597472746
+    },
+    {
+      "ticker": "CPER",
+      "weight": 0.0,
+      "risk_share": 0.0,
+      "recent_risk_share": 0.0
+    },
+    {
+      "ticker": "BNO",
+      "weight": 0.007326039278834415,
+      "risk_share": 0.006329817180690693,
+      "recent_risk_share": -0.007825492305777695
+    },
+    {
+      "ticker": "BTC-USD",
+      "weight": 0.02033610721018721,
+      "risk_share": 0.04409174479625988,
+      "recent_risk_share": 0.045000456872775055
+    },
+    {
+      "ticker": "ETH-USD",
+      "weight": 0.008093732335220389,
+      "risk_share": 0.021566339110240394,
+      "recent_risk_share": 0.02522312992710958
+    }
+  ],
+  "limitation": "Current weights on old returns are a historical stress lens, not a 2024 forecast. Ledoit-Wolf explicitly cautions against constant correlation across asset classes; it is shown only as a sensitivity target here. Diagonal shrinkage can also suppress real common risks. No optimal intensity is estimated. Sample covariance is noisy and bootstrap intervals omit unseen regimes."
+}

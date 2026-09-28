@@ -1,0 +1,116 @@
+{
+  "pairs": [
+    {
+      "pair": "AUDJPY",
+      "break_even_spot_return": -0.009150488438234183,
+      "flat_spot_quarter_pnl": 0.00924999999999987,
+      "costless_forward_ratio": 0.9898602695684433,
+      "spot_observations": 509,
+      "daily_spot_var975": 0.011883146868424658,
+      "daily_spot_es975": 0.018145200767457917,
+      "tail_n": 13,
+      "worst_daily_spot_return": -0.05841761797195011,
+      "spot_start": "2024-09-30",
+      "spot_end": "2026-09-18"
+    },
+    {
+      "pair": "MXNJPY",
+      "break_even_spot_return": -0.023995127892813772,
+      "flat_spot_quarter_pnl": 0.024625000000000008,
+      "costless_forward_ratio": 0.9750304506699148,
+      "spot_observations": 509,
+      "daily_spot_var975": 0.0166461958195573,
+      "daily_spot_es975": 0.02329298077441696,
+      "tail_n": 13,
+      "worst_daily_spot_return": -0.03920845267105477,
+      "spot_start": "2024-09-30",
+      "spot_end": "2026-09-18"
+    }
+  ],
+  "scenarios": [
+    {
+      "pair": "AUDJPY",
+      "target_rate": 0.0435,
+      "funding_rate": 0.0025,
+      "years": 0.25,
+      "spot_return": -0.15,
+      "pnl_per_borrowed_notional": -0.14238125000000013
+    },
+    {
+      "pair": "AUDJPY",
+      "target_rate": 0.0435,
+      "funding_rate": 0.0025,
+      "years": 0.25,
+      "spot_return": -0.1,
+      "pnl_per_borrowed_notional": -0.09183750000000013
+    },
+    {
+      "pair": "AUDJPY",
+      "target_rate": 0.0435,
+      "funding_rate": 0.0025,
+      "years": 0.25,
+      "spot_return": -0.05,
+      "pnl_per_borrowed_notional": -0.04129375000000013
+    },
+    {
+      "pair": "AUDJPY",
+      "target_rate": 0.0435,
+      "funding_rate": 0.0025,
+      "years": 0.25,
+      "spot_return": 0,
+      "pnl_per_borrowed_notional": 0.00924999999999987
+    },
+    {
+      "pair": "AUDJPY",
+      "target_rate": 0.0435,
+      "funding_rate": 0.0025,
+      "years": 0.25,
+      "spot_return": 0.05,
+      "pnl_per_borrowed_notional": 0.05979374999999998
+    },
+    {
+      "pair": "MXNJPY",
+      "target_rate": 0.105,
+      "funding_rate": 0.0025,
+      "years": 0.25,
+      "spot_return": -0.15,
+      "pnl_per_borrowed_notional": -0.12931250000000005
+    },
+    {
+      "pair": "MXNJPY",
+      "target_rate": 0.105,
+      "funding_rate": 0.0025,
+      "years": 0.25,
+      "spot_return": -0.1,
+      "pnl_per_borrowed_notional": -0.07799999999999996
+    },
+    {
+      "pair": "MXNJPY",
+      "target_rate": 0.105,
+      "funding_rate": 0.0025,
+      "years": 0.25,
+      "spot_return": -0.05,
+      "pnl_per_borrowed_notional": -0.026687500000000086
+    },
+    {
+      "pair": "MXNJPY",
+      "target_rate": 0.105,
+      "funding_rate": 0.0025,
+      "years": 0.25,
+      "spot_return": 0,
+      "pnl_per_borrowed_notional": 0.024625000000000008
+    },
+    {
+      "pair": "MXNJPY",
+      "target_rate": 0.105,
+      "funding_rate": 0.0025,
+      "years": 0.25,
+      "spot_return": 0.05,
+      "pnl_per_borrowed_notional": 0.0759375000000001
+    }
+  ],
+  "daily_spot_correlation": 0.7499614101650595,
+  "funded_portfolio_exposure": 0,
+  "formula": "(1+r_target*T)*(S1/S0) - (1+r_JPY*T) - cost; S=JPY per target unit",
+  "limitation": "Hypothetical simple-interest deposits; no forward points, cross-currency basis, margin path, broker financing, or EUR conversion. Spot risk is not total carry P&L. Both pairs share JPY funding."
+}

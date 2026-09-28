@@ -1,0 +1,9 @@
+target,lambda,volatility
+constant_correlation,0,0.131932350168496
+constant_correlation,0.25,0.1289307519034275
+constant_correlation,0.5,0.12585758837584526
+constant_correlation,1,0.11947434905696185
+diagonal,0,0.131932350168496
+diagonal,0.25,0.12049667666806961
+diagonal,0.5,0.1078552416673199
+diagonal,1,0.07654646490367344

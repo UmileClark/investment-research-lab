@@ -1,0 +1,332 @@
+{
+  "authored": "2026-09-28",
+  "portfolio_marks": "2026-09-25",
+  "projects": [
+    {
+      "id": "audit",
+      "title": "Portfolio accounting audit",
+      "category": "Data & engineering",
+      "module": "accounting.py",
+      "question": "Can every euro of the published portfolio be reconciled?",
+      "method": "Replay all 217 signed instrument transactions against frozen EUR-adjusted prices. Recompute fees and cash, reconcile every historical NAV, convert index units to closing share equivalents and independently value the current book. Verify evidence dates and exclude pending instructions.",
+      "decision": "A risk or performance claim is unusable until cash, positions and P&L agree. The audit supplies the common accounting base for all other projects.",
+      "falsifier": "Any unexplained NAV difference, future-dated source, stale quote or unprocessed corporate action blocks publication.",
+      "next": "Extend the forward ledger to explicit ex-date entitlements, payment dates, tax and interest when those events actually occur.",
+      "interview": "Explain adjusted index units versus real shares, why price plus dividends must not be counted twice, and why an order is not a fill.",
+      "routes": [
+        [
+          "current",
+          "Current book"
+        ],
+        [
+          "method",
+          "Accounting methods"
+        ]
+      ],
+      "sources": [
+        "archive"
+      ],
+      "status": "Frozen-data reconciliation",
+      "finding": "All 515 historical NAV marks reconcile. Replayed NAV: €126,505.91; current marks: €127,555.12. Pending order excluded."
+    },
+    {
+      "id": "risk",
+      "title": "Capital weights versus risk contributions",
+      "category": "Portfolio construction",
+      "module": "risk.py",
+      "question": "Which positions consume the portfolio's risk budget?",
+      "method": "Apply current weights to EUR returns from 2021–2024. Use sample covariance as the transparent baseline and compare 0%, 25%, 50% and 100% shrinkage to constant-correlation and diagonal targets. Compute Euler variance shares, daily historical VaR/ES and a circular block-bootstrap volatility interval. Compare with a recent window.",
+      "decision": "Small crypto or single-stock capital weights can consume disproportionate risk. Overlapping equity funds require a covariance view rather than a count of holdings.",
+      "falsifier": "If risk rankings change substantially across windows or shrinkage assumptions, precise risk budgets deserve less confidence; no single covariance matrix is treated as truth.",
+      "next": "Add verified fund look-through and stress correlations. Estimate shrinkage intensity before using this as an optimiser.",
+      "interview": "Explain why an empirical ES based on 19 tail observations is fragile and why current weights on past returns are a scenario, not a historical live forecast.",
+      "routes": [
+        [
+          "current",
+          "Current weights"
+        ],
+        [
+          "model/risk",
+          "Risk calculator"
+        ]
+      ],
+      "sources": [
+        "shrink",
+        "diversify",
+        "crypto"
+      ],
+      "status": "Historical risk diagnostic",
+      "finding": "Current weights on the pre-inception sample imply 13.19% annual volatility; daily 97.5% ES is 2.17%. The block-bootstrap volatility range is 11.87%–14.67%."
+    },
+    {
+      "id": "attribution",
+      "title": "Price and currency attribution",
+      "category": "Performance & FX",
+      "module": "accounting.py",
+      "question": "Did the first forward week's profit come from assets or currency?",
+      "method": "Hold share quantities fixed from 18 to 25 September 2026. Decompose EUR P&L exactly into local-price change translated at opening FX and currency change applied to the closing local value. Assign the interaction explicitly to FX.",
+      "decision": "Unhedged US Treasury and commodity ETF marks can move in EUR even when local prices barely move. Attribute the result before judging the thesis.",
+      "falsifier": "A change in units, distribution entitlement or other cash flow invalidates this two-endpoint fixed-position calculation and requires a daily ledger.",
+      "next": "Extend to daily transaction-aware attribution and an explicit, costed currency-hedging counterfactual.",
+      "interview": "Derive the price/FX cross term. Explain why a USD-listed global equity ETF does not represent pure economic USD exposure.",
+      "routes": [
+        [
+          "current",
+          "Forward marks"
+        ],
+        [
+          "fx",
+          "FX research"
+        ]
+      ],
+      "sources": [
+        "archive"
+      ],
+      "status": "Exact accounting identity",
+      "finding": "18–25 September: €52.27 local-price P&L plus €996.95 currency P&L equals €1,049.21."
+    },
+    {
+      "id": "rates",
+      "title": "Duration, convexity and curve risk",
+      "category": "Fixed income",
+      "module": "rates.py",
+      "question": "What does the proposed IEF-to-SHY shift actually change?",
+      "method": "Price synthetic 2- and 8-year semiannual coupon bonds exactly. Compare duration-convexity approximations, node shocks and non-parallel curve scenarios. Then evaluate a 2%-of-NAV shift using explicitly assumed ETF durations of 7.2 and 1.8 years, including both trading fees.",
+      "decision": "The shift modestly lowers sensitivity to a yield rise while giving up gains if yields fall. The fee hurdle makes the size of the intended risk reduction concrete.",
+      "falsifier": "The interpretation fails if ETF duration, cash availability or the curve differ materially from assumptions. A Fed decision alone cannot identify an underpriced long-bond risk premium.",
+      "next": "Replace teaching inputs with dated fund analytics and a sourced Treasury curve before execution; model FX hedging separately.",
+      "interview": "Explain why policy rates and long yields can move differently, and why dollar duration does not include EUR/USD risk.",
+      "routes": [
+        [
+          "decision/review-2026-09-28",
+          "Pending duration decision"
+        ],
+        [
+          "fixed-income",
+          "Rates thesis"
+        ]
+      ],
+      "sources": [
+        "term"
+      ],
+      "status": "Illustrative scenario model",
+      "finding": "The pending 2% shift reduces assumed portfolio duration by 0.108 years. Two-leg costs are €12.76; a parallel yield rise of 9.3 bp covers them in the instantaneous approximation."
+    },
+    {
+      "id": "fx",
+      "title": "Carry, break-even and funding stress",
+      "category": "Foreign exchange",
+      "module": "fx.py",
+      "question": "How little adverse currency movement can erase the carry?",
+      "method": "Calculate financed AUD/JPY and MXN/JPY payoffs with simple deposit/loan interest, 10 bp assumed total cost and September-2024 policy-rate anchors. Derive break-even spot moves and textbook zero-basis forward ratios. Measure historical spot-only tail risk and pair correlation separately.",
+      "decision": "Two target currencies funded in yen share a common vulnerability. A small quarterly accrual should be compared with a large adverse spot move before allocating capital.",
+      "falsifier": "Actual forwards, funding spreads, margin calls and collateral remuneration can overturn the indicative return. Without those records, this overlay contributes zero reported portfolio P&L.",
+      "next": "Archive executable forward points and bid/ask quotes, define collateral and financing, then start a prospective EUR-valued paper ledger.",
+      "interview": "Distinguish return on borrowed notional from return on margin, covered parity from uncovered expected return, and a spot series from a carry total-return series.",
+      "routes": [
+        [
+          "decision/yen",
+          "Funding review"
+        ],
+        [
+          "fx",
+          "FX playbook"
+        ]
+      ],
+      "sources": [
+        "carry",
+        "basis",
+        "rates2024"
+      ],
+      "status": "Mechanics + observed spot risk",
+      "finding": "Illustrative quarterly carry is erased by spot losses of 0.92% for AUD/JPY and 2.40% for MXN/JPY. Neither is a funded portfolio trade."
+    },
+    {
+      "id": "valuation",
+      "title": "CME reverse valuation",
+      "category": "Equity research",
+      "module": "valuation.py",
+      "question": "How much cash-flow growth was embedded in the September-2024 price?",
+      "method": "Bridge FY2023 operating cash flow to a conservative per-share equity cash proxy, subtracting capex and stock compensation. Model five explicit years and a terminal value, solve implied growth, and show discount-rate/growth and bull/base/bear sensitivities.",
+      "decision": "An attractive exchange franchise does not guarantee an attractive purchase price. A reverse valuation makes the growth hurdle visible and can challenge an optimistic narrative.",
+      "falsifier": "A cash proxy that misses recurring reinvestment, financing or competitive pressure is insufficient. A high terminal-value share makes apparently precise fair values especially fragile.",
+      "next": "Build a current operating forecast from volumes, revenue per contract, product mix, expenses, collateral economics and capital allocation.",
+      "interview": "Explain why subtract SBC, why there is no extra net-cash add-on here, and why this aged inception model cannot justify a 2026 hold without refreshed inputs.",
+      "routes": [
+        [
+          "pitch/cme",
+          "CME thesis"
+        ],
+        [
+          "model/valuation",
+          "Interactive valuation"
+        ]
+      ],
+      "sources": [
+        "equitycash",
+        "cme2023"
+      ],
+      "status": "Historical valuation sensitivity",
+      "finding": "The September-2024 CME price requires 11.04% annual cash growth under the stated discount assumptions. Base proxy value: $192.35; 77.1% comes from the terminal value."
+    },
+    {
+      "id": "rebalancing",
+      "title": "Is more trading actually better?",
+      "category": "Systematic research",
+      "module": "rebalancing.py",
+      "question": "How do buy-and-hold, monthly resets and drift bands compare?",
+      "method": "Keep the same 16-instrument September-2024 allocation for all three rules. Review at the last calendar weekday and execute at a strictly later common-market close. Charge 25 bp per side and 50 bp for crypto, then vary costs without selecting the best-performing configuration.",
+      "decision": "Separate allocation maintenance from new investment information. Additional activity should be justified by risk control or improved expected returns, not by making the journal look busy.",
+      "falsifier": "If a strategy's apparent advantage vanishes with realistic costs, different windows or stable accounting conventions, it is not a robust edge.",
+      "next": "Register a forward policy before observing returns, extend the dataset, and compare on equal risk rather than maximising the historical headline return.",
+      "interview": "Explain why a chronological simulation can still suffer from hindsight, why gross turnover counts both legs and why these rules are different from the discretionary historical book.",
+      "routes": [
+        [
+          "review",
+          "Active decision review"
+        ],
+        [
+          "journal",
+          "Decision journal"
+        ]
+      ],
+      "sources": [
+        "diversify",
+        "backtest"
+      ],
+      "status": "Retrospective rule comparison",
+      "finding": "Buy hold: 26.99% net, €248 fees; Monthly: 27.20% net, €468 fees; Drift: 29.35% net, €394 fees. These are historical comparisons, not verified alpha."
+    },
+    {
+      "id": "commodities",
+      "title": "Commodity exposure and futures mechanics",
+      "category": "Commodities",
+      "module": "commodities.py",
+      "question": "What risk is owned through gold, silver, copper and oil vehicles?",
+      "method": "Compare EUR return correlations and volatility of VT, GLD, SLV, CPER and BNO in two windows. Independently illustrate long-futures convergence in backwardation, a flat curve and contango with unchanged spot and explicit collateral/cost assumptions.",
+      "decision": "Separate physical-metal exposure from futures-based funds. Spot direction alone cannot explain an oil or copper fund's return; diversified-index research does not validate a concentrated commodity bet.",
+      "falsifier": "Observed diversification can disappear in a new regime. A futures curve, index roll rule or financing convention different from the illustration changes the result.",
+      "next": "Archive contract-level settlements, expiry schedules, roll rules and collateral yields to decompose actual fund returns.",
+      "interview": "Explain why contango need not cause an instantaneous cash loss on the roll date, and why neither gold nor silver is a guaranteed short-horizon inflation hedge.",
+      "routes": [
+        [
+          "commodities",
+          "Commodity theses"
+        ],
+        [
+          "decision/copper-basis",
+          "Copper basis decision"
+        ]
+      ],
+      "sources": [
+        "commodities",
+        "gold"
+      ],
+      "status": "Fund data + synthetic curves",
+      "finding": "With unchanged spot and an identically resetting 2% contango curve, the illustrative collateralised futures return is -19.69% over twelve months. This is a mechanics example, not a forecast."
+    },
+    {
+      "id": "events",
+      "title": "Novo and Rheinmetall event studies",
+      "category": "Equity event research",
+      "module": "events.py",
+      "question": "How unusual were the price moves around the thesis-changing releases?",
+      "method": "Fit a simple EUR market model on sessions -120 through -21 before each release, then measure abnormal returns over -5 through +5. Use VT for the Novo ADR and IEUR for Rheinmetall. Bridge adjusted-price archives at the overlapping date before combining them.",
+      "decision": "Distinguish a stock-specific repricing from a broad market move. Preserve unfavourable outcomes and connect fundamental releases to a repeatable diagnostic.",
+      "falsifier": "A different benchmark, concurrent news or non-synchronous prices can materially change abnormal returns. Event selection after the outcome prevents a causal or predictive claim.",
+      "next": "Pre-register future events and windows, include unaffected controls and sector factors, and separate announcement time from local close time.",
+      "interview": "Explain alpha and beta estimation, arithmetic CAR versus compounded wealth, event contamination and why three selected events do not establish skill.",
+      "routes": [
+        [
+          "decision/novo-trial",
+          "Novo clinical review"
+        ],
+        [
+          "decision/rheinmetall-add",
+          "Rheinmetall allocation"
+        ]
+      ],
+      "sources": [
+        "eventstudy",
+        "novoTrial",
+        "novo25",
+        "rhm25"
+      ],
+      "status": "Descriptive retrospective study",
+      "finding": "NVO 2024-12-20: -18.28% event-day abnormal return; NVO 2025-07-29: -21.59% event-day abnormal return; RHM.DE 2025-03-12: 9.47% event-day abnormal return. Selected events do not establish causality."
+    }
+  ],
+  "sources": {
+    "archive": {
+      "title": "Frozen portfolio and Yahoo Finance price archives",
+      "url": "https://fabio-investment-lab.fraccafabio.chatgpt.site/#method",
+      "application": "Accounting inputs and reference closing marks. Retrieved in 2026, not historical point-in-time vintages."
+    },
+    "shrink": {
+      "title": "Ledoit & Wolf — Honey, I Shrunk the Sample Covariance Matrix (2003 working paper; 2004 publication)",
+      "url": "https://econ-papers.upf.edu/papers/691.pdf",
+      "application": "Structured estimation motivation. The paper cautions against constant correlation across asset classes; both constant-correlation and diagonal targets are sensitivity checks, not validated allocation models. No optimal intensity is estimated."
+    },
+    "diversify": {
+      "title": "DeMiguel, Garlappi & Uppal — Optimal versus Naive Diversification (2009)",
+      "url": "https://doi.org/10.1093/rfs/hhm075",
+      "application": "Estimation error motivates simple benchmark rules; no replication of the paper and no endorsement of these exact weights."
+    },
+    "crypto": {
+      "title": "Liu & Tsyvinski — Risks and Returns of Cryptocurrency (2018)",
+      "url": "https://www.nber.org/papers/w24877",
+      "application": "Motivates separate crypto risk treatment; an early sample does not establish stable modern correlations."
+    },
+    "term": {
+      "title": "Adrian, Crump & Moench — Pricing the Term Structure with Linear Regressions",
+      "url": "https://www.newyorkfed.org/research/staff_reports/sr340.html",
+      "application": "Conceptual distinction between expected short rates and term compensation. No ACM model is fitted in this project."
+    },
+    "carry": {
+      "title": "Brunnermeier, Nagel & Pedersen — Carry Trades and Currency Crashes (2008)",
+      "url": "https://markus.scholar.princeton.edu/publications/carry-trades-and-currency-crashes",
+      "application": "Funding unwind and downside-tail motivation; the project does not reproduce their currency basket study."
+    },
+    "basis": {
+      "title": "Borio et al. — Covered Interest Parity Lost (BIS, 2016)",
+      "url": "https://www.bis.org/publ/qtrpdf/r_qt1609e.htm",
+      "application": "Explains why actual forward quotes can differ from frictionless parity; basis is not estimated here."
+    },
+    "rates2024": {
+      "title": "September-2024 central-bank rate anchors",
+      "url": "https://www.rba.gov.au/media-releases/2024/mr-24-18.html",
+      "application": "AUD 4.35%, JPY 0.25%, MXN 10.50% are historical policy anchors, not executable matched-maturity lending or borrowing quotes. See docs/SOURCES.md for the BOJ and Banxico releases."
+    },
+    "equitycash": {
+      "title": "Damodaran — Free Cash Flow to Equity Discount Models, chapter 14",
+      "url": "https://pages.stern.nyu.edu/~adamodar/pdfiles/valn2ed/ch14.pdf",
+      "application": "Equity cash-flow discounting framework; the CME cash proxy omits a complete financing and operating forecast."
+    },
+    "cme2023": {
+      "title": "CME Group FY2023 Form 10-K",
+      "url": "https://www.sec.gov/Archives/edgar/data/1156375/000115637524000010/cme-20231231.htm",
+      "application": "Cash-flow statement: CFO $3,453.8m; property purchases $76.4m; SBC $82.9m. Share denominator is disclosed separately in the input notes."
+    },
+    "backtest": {
+      "title": "Bailey et al. — The Probability of Backtest Overfitting (2015)",
+      "url": "https://www.davidhbailey.com/dhbpapers/backtest-prob.pdf",
+      "application": "Motivates reporting all specified rule/cost comparisons rather than presenting only the winner. No PBO statistic is estimated from three rules."
+    },
+    "commodities": {
+      "title": "Gorton & Rouwenhorst — Facts and Fantasies about Commodity Futures (2004)",
+      "url": "https://www.nber.org/papers/w10595",
+      "application": "Research on diversified, collateralised futures; not a direct validation of GLD, CPER or BNO."
+    },
+    "gold": {
+      "title": "Erb & Harvey — The Golden Dilemma (2013)",
+      "url": "https://www.nber.org/papers/w18706",
+      "application": "Cautions against treating gold as a reliable short-horizon inflation hedge."
+    },
+    "eventstudy": {
+      "title": "MacKinlay — Event Studies in Economics and Finance (1997)",
+      "url": "https://www.jstor.org/stable/2729691",
+      "application": "Market-model abnormal-return framework. No significance claim or causal identification is made here."
+    }
+  },
+  "disclosure": "Built with AI assistance in September 2026. The earlier portfolio is a retrospective reconstruction; these projects were not tools used live in 2024. No demonstrated predictive alpha or real-money track record is claimed."
+}

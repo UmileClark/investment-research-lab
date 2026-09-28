@@ -1,0 +1,199 @@
+{
+  "company": "CME Group",
+  "financial_period": "FY2023",
+  "information_cutoff": "2024-09-27",
+  "inputs": {
+    "cfo_m": 3453.8,
+    "capex_m": 76.4,
+    "sbc_m": 82.9,
+    "common_shares_m": 359.5,
+    "participating_securities_m": 4.584
+  },
+  "cash_per_share": 9.048736005976643,
+  "reference_price": 218.3000030517578,
+  "base_value": 192.3542197951171,
+  "terminal_value_share": 0.7711848014993077,
+  "implied_five_year_cash_growth": 0.1104274321298283,
+  "grid": [
+    {
+      "growth": 0.02,
+      "discount": 0.07,
+      "value": 222.70287384498414,
+      "upside": 0.020168899366356907
+    },
+    {
+      "growth": 0.02,
+      "discount": 0.08,
+      "value": 178.30631876072113,
+      "upside": -0.18320514764974327
+    },
+    {
+      "growth": 0.02,
+      "discount": 0.09,
+      "value": 148.70431364487413,
+      "upside": -0.31880755123206705
+    },
+    {
+      "growth": 0.02,
+      "discount": 0.1,
+      "value": 127.55650964996207,
+      "upside": -0.4156825109172395
+    },
+    {
+      "growth": 0.02,
+      "discount": 0.11,
+      "value": 111.69272379741409,
+      "upside": -0.48835216566198436
+    },
+    {
+      "growth": 0.05,
+      "discount": 0.07,
+      "value": 254.7967757625176,
+      "upside": 0.16718631333278822
+    },
+    {
+      "growth": 0.05,
+      "discount": 0.08,
+      "value": 203.52356108416714,
+      "upside": -0.06768869336244243
+    },
+    {
+      "growth": 0.05,
+      "discount": 0.09,
+      "value": 169.35086199723742,
+      "upside": -0.22422876944676362
+    },
+    {
+      "growth": 0.05,
+      "discount": 0.1,
+      "value": 144.94950556257808,
+      "upside": -0.3360077712494979
+    },
+    {
+      "growth": 0.05,
+      "discount": 0.11,
+      "value": 126.65492423167633,
+      "upside": -0.41981254026072046
+    },
+    {
+      "growth": 0.08,
+      "discount": 0.07,
+      "value": 290.6265731663309,
+      "upside": 0.33131731151384747
+    },
+    {
+      "growth": 0.08,
+      "discount": 0.08,
+      "value": 231.64764175300203,
+      "upside": 0.06114355709871222
+    },
+    {
+      "growth": 0.08,
+      "discount": 0.09,
+      "value": 192.3542197951171,
+      "upside": -0.1188537924595865
+    },
+    {
+      "growth": 0.08,
+      "discount": 0.1,
+      "value": 164.30861375172546,
+      "upside": -0.2473265622778359
+    },
+    {
+      "growth": 0.08,
+      "discount": 0.11,
+      "value": 143.29202903820612,
+      "upside": -0.34360042585875583
+    },
+    {
+      "growth": 0.11,
+      "discount": 0.07,
+      "value": 330.5153975201459,
+      "upside": 0.5140421113131288
+    },
+    {
+      "growth": 0.11,
+      "discount": 0.08,
+      "value": 262.9287831945746,
+      "upside": 0.2044378356340908
+    },
+    {
+      "growth": 0.11,
+      "discount": 0.09,
+      "value": 217.91629295642184,
+      "upside": -0.001757719147832515
+    },
+    {
+      "growth": 0.11,
+      "discount": 0.1,
+      "value": 185.80146379346576,
+      "upside": -0.14887099772777745
+    },
+    {
+      "growth": 0.11,
+      "discount": 0.11,
+      "value": 161.7461561068325,
+      "upside": -0.2590648014398639
+    },
+    {
+      "growth": 0.14,
+      "discount": 0.07,
+      "value": 374.8046313427832,
+      "upside": 0.7169245355160114
+    },
+    {
+      "growth": 0.14,
+      "discount": 0.08,
+      "value": 297.6313012322188,
+      "upside": 0.36340493390488837
+    },
+    {
+      "growth": 0.14,
+      "discount": 0.09,
+      "value": 246.25032756942693,
+      "upside": 0.12803629925301574
+    },
+    {
+      "growth": 0.14,
+      "discount": 0.1,
+      "value": 209.60507390467274,
+      "upside": -0.03983018335104449
+    },
+    {
+      "growth": 0.14,
+      "discount": 0.11,
+      "value": 182.1673608108739,
+      "upside": -0.1655182855509033
+    }
+  ],
+  "scenarios": [
+    {
+      "scenario": "Bear",
+      "growth": 0.02,
+      "discount": 0.11,
+      "terminal_growth": 0.02,
+      "value": 102.55234140106859,
+      "terminal_share": 0.6552182189430003,
+      "upside": -0.5302229044094243
+    },
+    {
+      "scenario": "Base",
+      "growth": 0.08,
+      "discount": 0.09,
+      "terminal_growth": 0.03,
+      "value": 192.3542197951171,
+      "terminal_share": 0.7711848014993077,
+      "upside": -0.1188537924595865
+    },
+    {
+      "scenario": "Bull",
+      "growth": 0.12,
+      "discount": 0.08,
+      "terminal_growth": 0.035,
+      "value": 300.1504370192399,
+      "terminal_share": 0.8316643967670417,
+      "upside": 0.3749447220487476
+    }
+  ],
+  "limitation": "CFO less capex less SBC is a deliberately conservative proxy, not a full FCFE forecast. No financing forecast; participating securities added conservatively to denominator. No incremental net-cash add-on. September-2024 valuation exercise, not a current target or proof of a historical decision."
+}

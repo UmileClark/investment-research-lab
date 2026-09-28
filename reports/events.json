@@ -1,0 +1,340 @@
+{
+  "events": [
+    {
+      "ticker": "NVO",
+      "benchmark": "VT",
+      "event_date": "2024-12-20",
+      "source_id": "novoTrial",
+      "event": "REDEFINE 1 headline readout",
+      "alpha_daily": -0.0036408502552905115,
+      "beta": 1.0548037900021607,
+      "estimation_start": "2024-07-02",
+      "estimation_end": "2024-11-20",
+      "estimation_n": 100,
+      "residual_daily_vol": 0.02012829495457776,
+      "rows": [
+        {
+          "day": -5,
+          "date": "2024-12-13",
+          "stock_return": -0.012200953159581696,
+          "market_return": 0.00198119243236472,
+          "abnormal_return": -0.01064987219067309,
+          "cumulative_abnormal_return": -0.01064987219067309
+        },
+        {
+          "day": -4,
+          "date": "2024-12-16",
+          "stock_return": 0.0068250723451137585,
+          "market_return": -0.0021178996038949682,
+          "abnormal_return": 0.012699891129436758,
+          "cumulative_abnormal_return": 0.002050018938763668
+        },
+        {
+          "day": -3,
+          "date": "2024-12-17",
+          "stock_return": -0.0010636434361688263,
+          "market_return": -0.004865699582673799,
+          "abnormal_return": 0.007709565179937941,
+          "cumulative_abnormal_return": 0.00975958411870161
+        },
+        {
+          "day": -2,
+          "date": "2024-12-18",
+          "stock_return": -0.016895569276410893,
+          "market_return": -0.02744903315239855,
+          "abnormal_return": 0.015698625179924562,
+          "cumulative_abnormal_return": 0.02545820929862617
+        },
+        {
+          "day": -1,
+          "date": "2024-12-19",
+          "stock_return": -0.010125378834831888,
+          "market_return": 0.013818041344672016,
+          "abnormal_return": -0.021059850960307974,
+          "cumulative_abnormal_return": 0.004398358338318198
+        },
+        {
+          "day": 0,
+          "date": "2024-12-20",
+          "stock_return": -0.17943275701880745,
+          "market_return": 0.006653334776537179,
+          "abnormal_return": -0.18280986950196154,
+          "cumulative_abnormal_return": -0.17841151116364334
+        },
+        {
+          "day": 1,
+          "date": "2024-12-23",
+          "stock_return": 0.036832100622471886,
+          "market_return": -0.001062438642770891,
+          "abnormal_return": 0.04159361518480188,
+          "cumulative_abnormal_return": -0.13681789597884148
+        },
+        {
+          "day": 2,
+          "date": "2024-12-24",
+          "stock_return": -0.012526235707356448,
+          "market_return": 0.01055454638530784,
+          "abnormal_return": -0.02001836098104225,
+          "cumulative_abnormal_return": -0.15683625695988374
+        },
+        {
+          "day": 3,
+          "date": "2024-12-26",
+          "stock_return": 0.0038101533970662516,
+          "market_return": 0.0017736802691989961,
+          "abnormal_return": 0.0055801189821536095,
+          "cumulative_abnormal_return": -0.15125613797773013
+        },
+        {
+          "day": 4,
+          "date": "2024-12-27",
+          "stock_return": -0.00545436107481545,
+          "market_return": -0.010093006412170147,
+          "abnormal_return": 0.008832630596548242,
+          "cumulative_abnormal_return": -0.1424235073811819
+        },
+        {
+          "day": 5,
+          "date": "2024-12-30",
+          "stock_return": -0.01935371369557548,
+          "market_return": -0.010260347693932692,
+          "abnormal_return": -0.004890209805984836,
+          "cumulative_abnormal_return": -0.14731371718716674
+        }
+      ],
+      "car_minus5_plus5": -0.14731371718716674,
+      "event_day_abnormal_return": -0.18280986950196154
+    },
+    {
+      "ticker": "NVO",
+      "benchmark": "VT",
+      "event_date": "2025-07-29",
+      "source_id": "novo25",
+      "event": "Novo guidance revision",
+      "alpha_daily": -0.0022741660874762712,
+      "beta": 0.896660174637035,
+      "estimation_start": "2025-02-03",
+      "estimation_end": "2025-06-27",
+      "estimation_n": 100,
+      "residual_daily_vol": 0.026760823929507623,
+      "rows": [
+        {
+          "day": -5,
+          "date": "2025-07-22",
+          "stock_return": 0.02303939674457456,
+          "market_return": -0.0027048007741375946,
+          "abnormal_return": 0.027738849966547432,
+          "cumulative_abnormal_return": 0.027738849966547432
+        },
+        {
+          "day": -4,
+          "date": "2025-07-23",
+          "stock_return": 0.044681633228400575,
+          "market_return": 0.007645562433872488,
+          "abnormal_return": 0.040100327968722385,
+          "cumulative_abnormal_return": 0.06783917793526982
+        },
+        {
+          "day": -3,
+          "date": "2025-07-24",
+          "stock_return": 0.006984231321097045,
+          "market_return": -0.00562460450461022,
+          "abnormal_return": 0.01430175626594137,
+          "cumulative_abnormal_return": 0.08214093420121119
+        },
+        {
+          "day": -2,
+          "date": "2025-07-25",
+          "stock_return": 0.015277442343058167,
+          "market_return": 0.0036718221378115867,
+          "abnormal_return": 0.01425923175120817,
+          "cumulative_abnormal_return": 0.09640016595241935
+        },
+        {
+          "day": -1,
+          "date": "2025-07-28",
+          "stock_return": -0.03771324047887392,
+          "market_return": -0.005059081008342403,
+          "abnormal_return": -0.030902797930954445,
+          "cumulative_abnormal_return": 0.0654973680214649
+        },
+        {
+          "day": 0,
+          "date": "2025-07-29",
+          "stock_return": -0.2074709015295888,
+          "market_return": 0.011949685614436545,
+          "abnormal_return": -0.21591154263201087,
+          "cumulative_abnormal_return": -0.15041417461054596
+        },
+        {
+          "day": 1,
+          "date": "2025-07-30",
+          "stock_return": -0.06880944193669247,
+          "market_return": 0.00044282789194460825,
+          "abnormal_return": -0.0669323419841414,
+          "cumulative_abnormal_return": -0.21734651659468734
+        },
+        {
+          "day": 2,
+          "date": "2025-07-31",
+          "stock_return": -0.04915551393141915,
+          "market_return": 0.0052996293332820965,
+          "abnormal_return": -0.051633314407435155,
+          "cumulative_abnormal_return": -0.2689798310021225
+        },
+        {
+          "day": 3,
+          "date": "2025-08-01",
+          "stock_return": 0.024297624619611824,
+          "market_return": -0.011212659069043007,
+          "abnormal_return": 0.03662573554608173,
+          "cumulative_abnormal_return": -0.2323540954560408
+        },
+        {
+          "day": 4,
+          "date": "2025-08-04",
+          "stock_return": -0.001377837076784738,
+          "market_return": -0.00024229109845386176,
+          "abnormal_return": 0.0011135817893441718,
+          "cumulative_abnormal_return": -0.23124051366669662
+        },
+        {
+          "day": 5,
+          "date": "2025-08-05",
+          "stock_return": -0.032362255231644155,
+          "market_return": -0.0017769864355123843,
+          "abnormal_return": -0.028494736176573707,
+          "cumulative_abnormal_return": -0.25973524984327034
+        }
+      ],
+      "car_minus5_plus5": -0.25973524984327034,
+      "event_day_abnormal_return": -0.21591154263201087
+    },
+    {
+      "ticker": "RHM.DE",
+      "benchmark": "IEUR",
+      "event_date": "2025-03-12",
+      "source_id": "rhm25",
+      "event": "Rheinmetall results and outlook",
+      "alpha_daily": 0.0034857675033854022,
+      "beta": 0.4934606827788608,
+      "estimation_start": "2024-09-12",
+      "estimation_end": "2025-02-10",
+      "estimation_n": 100,
+      "residual_daily_vol": 0.021699798937706103,
+      "rows": [
+        {
+          "day": -5,
+          "date": "2025-03-05",
+          "stock_return": 0.07174682215100758,
+          "market_return": 0.009836019646365601,
+          "abnormal_return": 0.06340736567710033,
+          "cumulative_abnormal_return": 0.06340736567710033
+        },
+        {
+          "day": -4,
+          "date": "2025-03-06",
+          "stock_return": -0.0029105738173867968,
+          "market_return": -0.025677400307731135,
+          "abnormal_return": 0.006274446167066938,
+          "cumulative_abnormal_return": 0.06968181184416726
+        },
+        {
+          "day": -3,
+          "date": "2025-03-07",
+          "stock_return": -0.07005840310284372,
+          "market_return": 0.01574994883799352,
+          "abnormal_return": -0.08131615111355753,
+          "cumulative_abnormal_return": -0.011634339269390268
+        },
+        {
+          "day": -2,
+          "date": "2025-03-10",
+          "stock_return": 0.003587519198412048,
+          "market_return": -0.03289089331888073,
+          "abnormal_return": 0.016332114369368204,
+          "cumulative_abnormal_return": 0.004697775099977937
+        },
+        {
+          "day": -1,
+          "date": "2025-03-11",
+          "stock_return": 0.03127783300468501,
+          "market_return": 0.0008031811493993679,
+          "abnormal_return": 0.027395727182921884,
+          "cumulative_abnormal_return": 0.032093502282899825
+        },
+        {
+          "day": 0,
+          "date": "2025-03-12",
+          "stock_return": 0.09618728828364786,
+          "market_return": -0.0040749943320699256,
+          "abnormal_return": 0.09471237026568567,
+          "cumulative_abnormal_return": 0.1268058725485855
+        },
+        {
+          "day": 1,
+          "date": "2025-03-13",
+          "stock_return": 0.018181732692843955,
+          "market_return": -0.00450248824249333,
+          "abnormal_return": 0.016917766111803102,
+          "cumulative_abnormal_return": 0.1437236386603886
+        },
+        {
+          "day": 2,
+          "date": "2025-03-14",
+          "stock_return": 0.06288824297708806,
+          "market_return": 0.022852797775047673,
+          "abnormal_return": 0.0481255182802204,
+          "cumulative_abnormal_return": 0.191849156940609
+        },
+        {
+          "day": 3,
+          "date": "2025-03-17",
+          "stock_return": -0.0007304528508977892,
+          "market_return": 0.007494730850269304,
+          "abnormal_return": -0.007914575356900874,
+          "cumulative_abnormal_return": 0.18393458158370812
+        },
+        {
+          "day": 4,
+          "date": "2025-03-18",
+          "stock_return": 0.05665202066219788,
+          "market_return": 0.0011609997399486538,
+          "abnormal_return": 0.05259334543443133,
+          "cumulative_abnormal_return": 0.23652792701813946
+        },
+        {
+          "day": 5,
+          "date": "2025-03-19",
+          "stock_return": -0.04531301461376658,
+          "market_return": -0.002015503236864058,
+          "abnormal_return": -0.04780421051374604,
+          "cumulative_abnormal_return": 0.18872371650439343
+        }
+      ],
+      "car_minus5_plus5": 0.18872371650439343,
+      "event_day_abnormal_return": 0.09471237026568567
+    }
+  ],
+  "price_archive_bridge": {
+    "VT": 1.0,
+    "VOO": 0.9999998813042009,
+    "IEUR": 0.9999999338295193,
+    "CME": 1.0000000758496468,
+    "NVO": 0.999999931839482,
+    "RHM.DE": 1.0,
+    "SU.PA": 1.0,
+    "UL": 1.0000002215120791,
+    "IEF": 0.9999999162746226,
+    "SHY": 1.0000000987633348,
+    "GLD": 1.0,
+    "SLV": 1.0,
+    "CPER": 1.0,
+    "BNO": 1.0,
+    "BTC-USD": 1.0,
+    "ETH-USD": 1.0,
+    "EURUSD=X": 1.0
+  },
+  "formula": "r_stock = alpha + beta*r_benchmark + residual; OLS fit on sessions [-120,-21], CAR=sum(abnormal returns)",
+  "limitation": "Three events selected after observing outcomes; descriptive, not causal inference or strategy validation. Concurrent news, EUR translation and asynchronous Europe/US closes matter. No significance claim, multiple-testing adjustment or sector-factor model."
+}

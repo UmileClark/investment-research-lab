@@ -1,0 +1,181 @@
+{
+  "symbols": [
+    "VT",
+    "GLD",
+    "SLV",
+    "CPER",
+    "BNO"
+  ],
+  "windows": [
+    {
+      "window": "Pre-inception",
+      "start": "2021-09-27",
+      "end": "2024-09-27",
+      "observations": 755,
+      "rows": [
+        {
+          "ticker": "VT",
+          "equity_correlation": 0.9999999999999999,
+          "annualised_volatility": 0.18527987016684888
+        },
+        {
+          "ticker": "GLD",
+          "equity_correlation": 0.3926851035538374,
+          "annualised_volatility": 0.16370445193396385
+        },
+        {
+          "ticker": "SLV",
+          "equity_correlation": 0.41971019170162105,
+          "annualised_volatility": 0.29231726803336366
+        },
+        {
+          "ticker": "CPER",
+          "equity_correlation": 0.5045939394968733,
+          "annualised_volatility": 0.2500682626740918
+        },
+        {
+          "ticker": "BNO",
+          "equity_correlation": 0.2637700601176532,
+          "annualised_volatility": 0.36271828145912133
+        }
+      ],
+      "correlation": [
+        [
+          0.9999999999999999,
+          0.3926851035538374,
+          0.41971019170162105,
+          0.5045939394968733,
+          0.2637700601176532
+        ],
+        [
+          0.39268510355383734,
+          0.9999999999999998,
+          0.8015590271289091,
+          0.47967924100055026,
+          0.33756922776137815
+        ],
+        [
+          0.419710191701621,
+          0.8015590271289091,
+          1.0,
+          0.5543034627015679,
+          0.31260188792014315
+        ],
+        [
+          0.5045939394968731,
+          0.47967924100055026,
+          0.5543034627015679,
+          1.0,
+          0.41051657582591994
+        ],
+        [
+          0.2637700601176532,
+          0.33756922776137815,
+          0.3126018879201431,
+          0.4105165758259199,
+          1.0
+        ]
+      ]
+    },
+    {
+      "window": "Reconstruction",
+      "start": "2024-09-30",
+      "end": "2026-09-18",
+      "observations": 492,
+      "rows": [
+        {
+          "ticker": "VT",
+          "equity_correlation": 0.9999999999999999,
+          "annualised_volatility": 0.1687431860109224
+        },
+        {
+          "ticker": "GLD",
+          "equity_correlation": 0.3675417262282801,
+          "annualised_volatility": 0.2503782484891295
+        },
+        {
+          "ticker": "SLV",
+          "equity_correlation": 0.39940768007152544,
+          "annualised_volatility": 0.486578069389596
+        },
+        {
+          "ticker": "CPER",
+          "equity_correlation": 0.5277468664345993,
+          "annualised_volatility": 0.3233681285710566
+        },
+        {
+          "ticker": "BNO",
+          "equity_correlation": -0.03748652342385217,
+          "annualised_volatility": 0.40728969920431035
+        }
+      ],
+      "correlation": [
+        [
+          0.9999999999999999,
+          0.3675417262282801,
+          0.39940768007152544,
+          0.5277468664345993,
+          -0.03748652342385217
+        ],
+        [
+          0.3675417262282801,
+          1.0,
+          0.7889555437179898,
+          0.4959171735449647,
+          0.040509822066681925
+        ],
+        [
+          0.39940768007152544,
+          0.7889555437179898,
+          1.0,
+          0.5499611482093256,
+          -0.0146660546595582
+        ],
+        [
+          0.5277468664345993,
+          0.4959171735449647,
+          0.5499611482093256,
+          0.9999999999999998,
+          0.03825020033849482
+        ],
+        [
+          -0.03748652342385217,
+          0.040509822066681925,
+          -0.0146660546595582,
+          0.03825020033849482,
+          1.0
+        ]
+      ]
+    }
+  ],
+  "curve_scenarios": [
+    {
+      "curve": "Backwardation",
+      "spot": 100,
+      "one_month_future": 98,
+      "spot_return": 0,
+      "futures_convergence": 0.02040816326530612,
+      "monthly_collateralised_return": 0.02190816326530612,
+      "hypothetical_12_month_return": 0.2970073018296855
+    },
+    {
+      "curve": "Flat",
+      "spot": 100,
+      "one_month_future": 100,
+      "spot_return": 0,
+      "futures_convergence": 0.0,
+      "monthly_collateralised_return": 0.0014999999999999996,
+      "hypothetical_12_month_return": 0.01814924501196291
+    },
+    {
+      "curve": "Contango",
+      "spot": 100,
+      "one_month_future": 102,
+      "spot_return": 0,
+      "futures_convergence": -0.0196078431372549,
+      "monthly_collateralised_return": -0.018107843137254904,
+      "hypothetical_12_month_return": -0.19690764455730925
+    }
+  ],
+  "limitation": "Fund returns include their particular structure and costs; no claim to replicate diversified commodity-futures academic indices. Synthetic curves reset identically each month with unchanged spot, 3% collateral and 10 bp monthly cost; these are not forecasts or actual CPER/BNO returns."
+}
