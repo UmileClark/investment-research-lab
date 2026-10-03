@@ -10,9 +10,13 @@ import matplotlib.pyplot as plt
 from .data import ROOT, verify_inputs, read
 from .catalog import PROJECTS, SOURCES
 from . import accounting, risk, rates, fx, valuation, rebalancing, commodities, events
+from . import stress, currency, factors, trend, volcontrol, drawdowns, varchecks, crypto_budget, optionhedges, decisionlog
 
 FUNCTIONS={"audit":accounting.audit,"attribution":accounting.attribution,"risk":risk.run,"rates":rates.run,
            "fx":fx.run,"valuation":valuation.run,"rebalancing":rebalancing.run,"commodities":commodities.run,"events":events.run}
+FUNCTIONS.update({'stress':stress.run,'currency':currency.run,'factors':factors.run,'trend':trend.run,
+                  'volcontrol':volcontrol.run,'drawdowns':drawdowns.run,'varchecks':varchecks.run,
+                  'crypto-budget':crypto_budget.run,'option-hedges':optionhedges.run,'decision-log':decisionlog.run})
 plt.rcParams.update({"font.family":"DejaVu Sans","font.size":10,"axes.spines.top":False,"axes.spines.right":False,
                      "axes.labelcolor":"#10263c","text.color":"#10263c","axes.titleweight":"bold","figure.facecolor":"white",
                      "svg.hashsalt":"fabio-research-20260928"})
@@ -26,6 +30,7 @@ def serial(value):
 
 
 def summary(pid,r):
+    if 'summary' in r:return r['summary']
     if pid=="audit":return f"All {r['daily_marks']} historical NAV marks reconcile. Replayed NAV: €{r['historical_nav']:,.2f}; current marks: €{r['current_nav']:,.2f}. Pending order excluded."
     if pid=="risk":return f"Current weights on the pre-inception sample imply {r['annualised_volatility']:.2%} annual volatility; daily 97.5% ES is {r['daily_es975']:.2%}. The block-bootstrap volatility range is {r['sample_vol_bootstrap95'][0]:.2%}–{r['sample_vol_bootstrap95'][2]:.2%}."
     if pid=="attribution":return f"18–25 September: €{r['totals']['local_price_eur']:,.2f} local-price P&L plus €{r['totals']['fx_eur']:,.2f} currency P&L equals €{r['totals']['total_eur']:,.2f}."
@@ -38,6 +43,7 @@ def summary(pid,r):
 
 
 def tables(pid,r):
+    if 'tables' in r:return r['tables']
     if pid=="audit":return {"reconciliation":[{"measure":k,"value":v} for k,v in r.items() if isinstance(v,(float,int,bool))]}
     if pid=="risk":return {"risk_contributions":r["rows"],"covariance_sensitivity":r["sensitivity"]}
     if pid=="attribution":return {"price_fx":r["rows"]}
@@ -54,6 +60,19 @@ def tables(pid,r):
 
 def chart(pid,r,out):
     fig,ax=plt.subplots(figsize=(10,5.4),layout="constrained")
+    if 'chart' in r:
+        c=r['chart']
+        if c['kind']=='bar':
+            positions=np.arange(len(c['labels']))
+            ax.bar(positions,c['values'],yerr=c.get('errors'),color=NAVY,capsize=4)
+            ax.set_xticks(positions,[label.replace(' ','\n') if len(label)>20 else label for label in c['labels']],fontsize=9)
+        else:
+            xs=[date.fromisoformat(x) for x in c['x']] if c['x'] and isinstance(c['x'][0],str) else c['x']
+            for series,color in zip(c['series'],[NAVY,TEAL,GOLD,RED]):
+                ax.plot(xs,series['values'],label=series['label'],color=color,linewidth=1.4)
+            ax.legend(fontsize=8)
+        ax.set(title=c['title'],ylabel=c['ylabel'],xlabel=c.get('xlabel',''))
+        ax.axhline(0,color='#aaa',lw=.5)
     if pid=="audit":
         h=read("historical_book.json")["history"]
         ax.plot([date.fromisoformat(x["date"]) for x in h],[x["nav"] for x in h],color=NAVY)
@@ -107,7 +126,8 @@ def chart(pid,r,out):
 
 def report(pid,result,out):
     project=next(p for p in PROJECTS if p["id"]==pid)
-    text=f"# {project['title']}\n\nResearch authored 28 September 2026 · {project['status']}\n\n## Question\n\n{project['question']}\n\n## Computed finding\n\n{summary(pid,result)}\n\n![Model output]({pid}.png)\n\n"
+    text=f"# {project['title']}\n\nResearch authored {project['authored']} · {project['status']}\n\n## Question\n\n{project['question']}\n\n## Computed finding\n\n{summary(pid,result)}\n\n![Model output]({pid}.png)\n\n"
+    if isinstance(result.get('inputs'),list):text+='## Input dates and assumptions\n\n'+'\n'.join('- '+v for v in result['inputs'])+'\n\n'
     for key,title in [("method","Method"),("decision","Investment implication"),("falsifier","What could invalidate the interpretation"),("next","Next research step"),("interview","Discussion prompt")]:
         text+=f"## {title}\n\n{project[key]}\n\n"
     text+=f"## Limitations\n\n{result['limitation']}\n\n## Reproduce\n\n```bash\npython -m investment_lab {pid}\n```\n\nFull numerical output: [{pid}.json]({pid}.json). CSV tables use decimal returns, not percentages.\n\n## Sources and use\n\n"
@@ -134,7 +154,7 @@ def run_project(pid, output=None):
 def run_all(output=None):
     results={p["id"]:run_project(p["id"],output) for p in PROJECTS}
     out=Path(output) if output else ROOT/"reports"
-    manifest={"authored":"2026-09-28","portfolio_marks":"2026-09-25","projects":[{**p,"finding":summary(p["id"],results[p["id"]])} for p in PROJECTS],"sources":SOURCES,
-              "disclosure":"Built with AI assistance in September 2026. The earlier portfolio is a retrospective reconstruction; these projects were not tools used live in 2024. No demonstrated predictive alpha or real-money track record is claimed."}
+    manifest={"authored":"2026-10-03","portfolio_marks":"2026-09-25","projects":[{**p,"finding":summary(p["id"],results[p["id"]])} for p in PROJECTS],"sources":SOURCES,
+              "disclosure":"Built with AI assistance in September–October 2026. Ten studies added on 3 October; portfolio marks remain 25 September and empirical return panels end 18 September. The earlier portfolio is a retrospective reconstruction; these projects were not tools used live in 2024. No demonstrated predictive alpha or real-money track record is claimed."}
     (out/"catalog.json").write_text(json.dumps(manifest,ensure_ascii=False,indent=2))
     return results

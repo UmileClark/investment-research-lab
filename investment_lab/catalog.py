@@ -81,3 +81,8 @@ SOURCES = {
  "gold":{"title":"Erb & Harvey — The Golden Dilemma (2013)","url":"https://www.nber.org/papers/w18706","application":"Cautions against treating gold as a reliable short-horizon inflation hedge."},
  "eventstudy":{"title":"MacKinlay — Event Studies in Economics and Finance (1997)","url":"https://www.jstor.org/stable/2729691","application":"Market-model abnormal-return framework. No significance claim or causal identification is made here."}
 }
+
+from .extended_catalog import PROJECTS as EXTENDED_PROJECTS, SOURCES as EXTENDED_SOURCES
+for p in PROJECTS: p.setdefault('authored','2026-09-28')
+PROJECTS.extend(EXTENDED_PROJECTS)
+SOURCES.update(EXTENDED_SOURCES)
