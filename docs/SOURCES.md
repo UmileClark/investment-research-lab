@@ -31,3 +31,16 @@ Novo's releases of 20 December 2024 and 29 July 2025 and Rheinmetall's release o
 ## Access and provenance
 
 Sources were reviewed or carried forward from the existing evidence register on 28 September 2026. Some publisher/PDF endpoints restrict automated access; the bibliography retains their stable primary references. Dates in the paper descriptions are publication dates, not retrieval dates. Price archives retain provider retrieval fields and are checked against frozen SHA-256 hashes.
+
+
+## 3 October 2026 additions
+
+- [BCBS (2018), Stress testing principles](https://www.bis.org/bcbs/publ/d450.htm): Scenario design and governance motivation. The four assumed shocks are not a regulatory stress test or estimated crisis probabilities.
+- [Moskowitz, Ooi & Pedersen (2012), Time Series Momentum](https://www.aqr.com/Insights/Research/Journal-Article/Time-Series-Momentum): Motivates lagged own-return signals. Our monthly long/cash ETF rule is not a replication of the paper’s futures strategy.
+- [Moreira & Muir (2016/2017), Volatility-Managed Portfolios](https://www.nber.org/papers/w22208): Motivates exposure sensitivity to realised volatility. Our capped volatility target differs from the paper’s inverse-variance factor portfolios.
+- [Newey & West (1986/1987), A Simple, Positive Semi-Definite, Heteroskedasticity and Autocorrelation Consistent Covariance Matrix](https://www.nber.org/papers/t0055): OLS coefficient uncertainty uses a Bartlett-weighted HAC estimator with five lags. Approximate intervals do not establish causal exposures.
+- [Chekhlov, Uryasev & Zabarankin (2005), Drawdown Measure in Portfolio Optimization](https://researchconnect.stonybrook.edu/en/publications/drawdown-measure-in-portfolio-optimization/): Motivates path-dependent loss analysis. The project measures episodes and block-resampling sensitivity; it does not solve the paper’s optimisation problem.
+- [Basel Framework MAR32, Backtesting requirements](https://www.bis.org/committees/bcbs/basel-framework/standard/mar/32/inforce/2023-01-01/published/2020-03-27): Motivates comparison of lagged risk forecasts with subsequent losses. Coverage diagnostics here are educational, not a regulatory backtest or model certification.
+- [Black & Scholes (1973), The Pricing of Options and Corporate Liabilities](https://doi.org/10.1086/260062): European call/put pricing at assumed constant volatility, with put–call parity tested. No market-implied volatility or tradable quote is inferred.
+- [Cboe (2021), Hedging Downside Exposure with PPUT, CLL and CLLZ Indices](https://www.cboe.com/insights/posts/benchmark-indices-series-hedging-downside-exposure-with-pput-cll-and-cllz-indices/): Institutional context for protective puts and collars. Synthetic strikes and costs do not replicate a Cboe benchmark.
+- [Gneiting & Raftery (2007), Strictly Proper Scoring Rules, Prediction, and Estimation](https://doi.org/10.1198/016214506000001437): Motivates recording probabilities before outcomes and scoring with binary Brier loss. A theoretical demonstration is kept separate from personal evidence.
