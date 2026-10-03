@@ -12,14 +12,6 @@ The September-2024 CME price requires 11.04% annual cash growth under the stated
 
 ![Model output](valuation.png)
 
-## Input dates and assumptions
-
-- cfo_m
-- capex_m
-- sbc_m
-- common_shares_m
-- participating_securities_m
-
 ## Method
 
 Bridge FY2023 operating cash flow to a conservative per-share equity cash proxy, subtracting capex and stock compensation. Model five explicit years and a terminal value, solve implied growth, and show discount-rate/growth and bull/base/bear sensitivities.
