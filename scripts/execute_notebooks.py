@@ -12,12 +12,15 @@ from investment_lab.catalog import PROJECTS
 
 for p in PROJECTS:
     pid=p["id"]
+    if len(sys.argv)>1 and pid not in sys.argv[1:]:continue
     cells=[
-      {"cell_type":"markdown","metadata":{},"source":f"# {p['title']}\n\n{p['question']}\n\nAuthored 28 September 2026. Retrospective study; AI-assisted implementation.\n\n{p['method']}"},
+      {"cell_type":"markdown","metadata":{},"source":f"# {p['title']}\n\n{p['question']}\n\nAuthored {p['authored']}. AI-assisted implementation. Read the study status and data boundaries.\n\n{p['method']}"},
       {"cell_type":"code","metadata":{},"source":"from pathlib import Path\nimport sys\nroot = Path.cwd()\nif not (root / 'investment_lab').exists():\n    root = root.parent\nif not (root / 'investment_lab').exists():\n    raise RuntimeError('Open this notebook from the project root or notebooks folder')\nsys.path.insert(0, str(root))\nfrom investment_lab.runner import run_project, summary\n","outputs":[],"execution_count":None},
       {"cell_type":"code","metadata":{},"source":f"result = run_project('{pid}')\nprint(summary('{pid}', result))\nprint('\\nLimitation:', result['limitation'])","outputs":[],"execution_count":None},
       {"cell_type":"markdown","metadata":{},"source":f"![Computed chart](../reports/{pid}.png)\n\n## Investment implication\n\n{p['decision']}\n\n## What could invalidate this interpretation?\n\n{p['falsifier']}\n\n## Investigate next\n\n{p['next']}\n\nFull numeric outputs and CSVs: `reports/{pid}.json` and `reports/{pid}_*.csv`. References: `reports/{pid}.md`."}
     ]
+    if p['authored']=='2026-10-03':
+        cells.insert(3,{'cell_type':'code','metadata':{},'source':"# Inspect the full sensitivity tables, not just the headline.\nfor name, rows in result['tables'].items():\n    print(name, ':', len(rows), 'rows')\n    for row in rows[:3]:\n        print(row)\nprint('Input assumptions:', *result['inputs'], sep='\\n- ')",'outputs':[],'execution_count':None})
     namespace={"__name__":"__main__"};count=0
     for cell in cells:
         if cell["cell_type"]!="code":continue
