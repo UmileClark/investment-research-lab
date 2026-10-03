@@ -1,6 +1,6 @@
 # Novo and Rheinmetall event studies
 
-Research authored 28 September 2026 · Descriptive retrospective study
+Research authored 2026-09-28 · Descriptive retrospective study
 
 ## Question
 

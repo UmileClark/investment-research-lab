@@ -1,6 +1,6 @@
 # CME reverse valuation
 
-Research authored 28 September 2026 · Historical valuation sensitivity
+Research authored 2026-09-28 · Historical valuation sensitivity
 
 ## Question
 
@@ -11,6 +11,14 @@ How much cash-flow growth was embedded in the September-2024 price?
 The September-2024 CME price requires 11.04% annual cash growth under the stated discount assumptions. Base proxy value: $192.35; 77.1% comes from the terminal value.
 
 ![Model output](valuation.png)
+
+## Input dates and assumptions
+
+- cfo_m
+- capex_m
+- sbc_m
+- common_shares_m
+- participating_securities_m
 
 ## Method
 

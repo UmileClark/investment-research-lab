@@ -1,0 +1,679 @@
+{
+  "authored": "2026-10-03",
+  "summary": "The assumed inflation shock produces -17.2% (-21,998 EUR) on the 25 September book. This is a scenario, not a probability or VaR estimate.",
+  "tables": {
+    "scenarios": [
+      {
+        "scenario": "Growth shock",
+        "portfolio_return": -0.1027841401501605,
+        "pnl_eur": -13110.643423778465,
+        "ending_nav_eur": 114444.47747935625
+      },
+      {
+        "scenario": "Inflation shock",
+        "portfolio_return": -0.17245529446268476,
+        "pnl_eur": -21997.55593557345,
+        "ending_nav_eur": 105557.56496756127
+      },
+      {
+        "scenario": "Liquidity shock",
+        "portfolio_return": -0.1624805177062728,
+        "pnl_eur": -20725.22208042755,
+        "ending_nav_eur": 106829.89882270717
+      },
+      {
+        "scenario": "EUR appreciation",
+        "portfolio_return": -0.13281949831208026,
+        "pnl_eur": -16941.807165491093,
+        "ending_nav_eur": 110613.3137376436
+      }
+    ],
+    "assumptions": [
+      {
+        "scenario": "Growth shock",
+        "equity_return": -0.25,
+        "single_stock_return": -0.3,
+        "yield_shock_bp": -100,
+        "gold_return": 0.1,
+        "silver_copper_return": -0.15,
+        "oil_return": -0.3,
+        "crypto_return": -0.4,
+        "usd_in_eur_return": 0.08
+      },
+      {
+        "scenario": "Inflation shock",
+        "equity_return": -0.18,
+        "single_stock_return": -0.22,
+        "yield_shock_bp": 150,
+        "gold_return": 0.05,
+        "silver_copper_return": -0.1,
+        "oil_return": 0.35,
+        "crypto_return": -0.35,
+        "usd_in_eur_return": -0.05
+      },
+      {
+        "scenario": "Liquidity shock",
+        "equity_return": -0.3,
+        "single_stock_return": -0.4,
+        "yield_shock_bp": 75,
+        "gold_return": -0.15,
+        "silver_copper_return": -0.35,
+        "oil_return": -0.35,
+        "crypto_return": -0.6,
+        "usd_in_eur_return": 0.12
+      },
+      {
+        "scenario": "EUR appreciation",
+        "equity_return": 0.0,
+        "single_stock_return": 0.0,
+        "yield_shock_bp": 0,
+        "gold_return": 0.0,
+        "silver_copper_return": 0.0,
+        "oil_return": 0.0,
+        "crypto_return": 0.0,
+        "usd_in_eur_return": -0.15
+      }
+    ],
+    "position_impacts": [
+      {
+        "scenario": "Growth shock",
+        "ticker": "VT",
+        "local_return": -0.25,
+        "fx_return": 0.08,
+        "eur_return": -0.18999999999999995,
+        "nav_contribution": -0.06899201855902923,
+        "pnl_eur": -8800.285268648287
+      },
+      {
+        "scenario": "Growth shock",
+        "ticker": "VOO",
+        "local_return": -0.25,
+        "fx_return": 0.08,
+        "eur_return": -0.18999999999999995,
+        "nav_contribution": -0.015258012476406697,
+        "pnl_eur": -1946.237626169594
+      },
+      {
+        "scenario": "Growth shock",
+        "ticker": "IEUR",
+        "local_return": -0.25,
+        "fx_return": 0.08,
+        "eur_return": -0.18999999999999995,
+        "nav_contribution": -0.009293952732511743,
+        "pnl_eur": -1185.4912644635547
+      },
+      {
+        "scenario": "Growth shock",
+        "ticker": "CME",
+        "local_return": -0.3,
+        "fx_return": 0.08,
+        "eur_return": -0.244,
+        "nav_contribution": -0.010868256234672795,
+        "pnl_eur": -1386.301738019936
+      },
+      {
+        "scenario": "Growth shock",
+        "ticker": "NVO",
+        "local_return": -0.3,
+        "fx_return": 0.08,
+        "eur_return": -0.244,
+        "nav_contribution": -0.0,
+        "pnl_eur": -0.0
+      },
+      {
+        "scenario": "Growth shock",
+        "ticker": "RHM.DE",
+        "local_return": -0.3,
+        "fx_return": 0.0,
+        "eur_return": -0.30000000000000004,
+        "nav_contribution": -0.010825743946110427,
+        "pnl_eur": -1380.879077912494
+      },
+      {
+        "scenario": "Growth shock",
+        "ticker": "SU.PA",
+        "local_return": -0.3,
+        "fx_return": 0.0,
+        "eur_return": -0.30000000000000004,
+        "nav_contribution": -0.009133355455117658,
+        "pnl_eur": -1165.0062593288378
+      },
+      {
+        "scenario": "Growth shock",
+        "ticker": "UL",
+        "local_return": -0.3,
+        "fx_return": 0.08,
+        "eur_return": -0.244,
+        "nav_contribution": -0.004892881338281697,
+        "pnl_eur": -624.1120706692134
+      },
+      {
+        "scenario": "Growth shock",
+        "ticker": "IEF",
+        "local_return": 0.075,
+        "fx_return": 0.08,
+        "eur_return": 0.16100000000000003,
+        "nav_contribution": 0.013520275305679239,
+        "pnl_eur": 1724.580351259582
+      },
+      {
+        "scenario": "Growth shock",
+        "ticker": "SHY",
+        "local_return": 0.018199999999999997,
+        "fx_return": 0.08,
+        "eur_return": 0.09965599999999997,
+        "nav_contribution": 0.011557162341942016,
+        "pnl_eur": 1474.1752398235692
+      },
+      {
+        "scenario": "Growth shock",
+        "ticker": "GLD",
+        "local_return": 0.1,
+        "fx_return": 0.08,
+        "eur_return": 0.18800000000000017,
+        "nav_contribution": 0.01448953012266752,
+        "pnl_eur": 1848.213766626468
+      },
+      {
+        "scenario": "Growth shock",
+        "ticker": "SLV",
+        "local_return": -0.15,
+        "fx_return": 0.08,
+        "eur_return": -0.08199999999999996,
+        "nav_contribution": -0.0012920300742999826,
+        "pnl_eur": -164.8050523378204
+      },
+      {
+        "scenario": "Growth shock",
+        "ticker": "CPER",
+        "local_return": -0.15,
+        "fx_return": 0.08,
+        "eur_return": -0.08199999999999996,
+        "nav_contribution": -0.0,
+        "pnl_eur": -0.0
+      },
+      {
+        "scenario": "Growth shock",
+        "ticker": "BNO",
+        "local_return": -0.3,
+        "fx_return": 0.08,
+        "eur_return": -0.244,
+        "nav_contribution": -0.0017875535840355973,
+        "pnl_eur": -228.0116135324924
+      },
+      {
+        "scenario": "Growth shock",
+        "ticker": "BTC-USD",
+        "local_return": -0.4,
+        "fx_return": 0.08,
+        "eur_return": -0.352,
+        "nav_contribution": -0.007158309737985898,
+        "pnl_eur": -913.0790640908778
+      },
+      {
+        "scenario": "Growth shock",
+        "ticker": "ETH-USD",
+        "local_return": -0.4,
+        "fx_return": 0.08,
+        "eur_return": -0.352,
+        "nav_contribution": -0.0028489937819975767,
+        "pnl_eur": -363.4037463149799
+      },
+      {
+        "scenario": "Inflation shock",
+        "ticker": "VT",
+        "local_return": -0.18,
+        "fx_return": -0.05,
+        "eur_return": -0.22099999999999997,
+        "nav_contribution": -0.08024861106076558,
+        "pnl_eur": -10236.121286164587
+      },
+      {
+        "scenario": "Inflation shock",
+        "ticker": "VOO",
+        "local_return": -0.18,
+        "fx_return": -0.05,
+        "eur_return": -0.22099999999999997,
+        "nav_contribution": -0.017747477669925685,
+        "pnl_eur": -2263.781659913054
+      },
+      {
+        "scenario": "Inflation shock",
+        "ticker": "IEUR",
+        "local_return": -0.18,
+        "fx_return": -0.05,
+        "eur_return": -0.22099999999999997,
+        "nav_contribution": -0.010810334494132082,
+        "pnl_eur": -1378.9135234023454
+      },
+      {
+        "scenario": "Inflation shock",
+        "ticker": "CME",
+        "local_return": -0.22,
+        "fx_return": -0.05,
+        "eur_return": -0.259,
+        "nav_contribution": -0.01153638674090268,
+        "pnl_eur": -1471.5252055211615
+      },
+      {
+        "scenario": "Inflation shock",
+        "ticker": "NVO",
+        "local_return": -0.22,
+        "fx_return": -0.05,
+        "eur_return": -0.259,
+        "nav_contribution": -0.0,
+        "pnl_eur": -0.0
+      },
+      {
+        "scenario": "Inflation shock",
+        "ticker": "RHM.DE",
+        "local_return": -0.22,
+        "fx_return": 0.0,
+        "eur_return": -0.21999999999999997,
+        "nav_contribution": -0.00793887889381431,
+        "pnl_eur": -1012.6446571358288
+      },
+      {
+        "scenario": "Inflation shock",
+        "ticker": "SU.PA",
+        "local_return": -0.22,
+        "fx_return": 0.0,
+        "eur_return": -0.21999999999999997,
+        "nav_contribution": -0.006697794000419614,
+        "pnl_eur": -854.3379235078141
+      },
+      {
+        "scenario": "Inflation shock",
+        "ticker": "UL",
+        "local_return": -0.22,
+        "fx_return": -0.05,
+        "eur_return": -0.259,
+        "nav_contribution": -0.005193673223831801,
+        "pnl_eur": -662.4796159972389
+      },
+      {
+        "scenario": "Inflation shock",
+        "ticker": "IEF",
+        "local_return": -0.10124999999999999,
+        "fx_return": -0.05,
+        "eur_return": -0.14618750000000003,
+        "nav_contribution": -0.012276367989124123,
+        "pnl_eur": -1565.9136031041003
+      },
+      {
+        "scenario": "Inflation shock",
+        "ticker": "SHY",
+        "local_return": -0.02655,
+        "fx_return": -0.05,
+        "eur_return": -0.07522249999999997,
+        "nav_contribution": -0.008723595611571136,
+        "pnl_eur": -1112.7392929440116
+      },
+      {
+        "scenario": "Inflation shock",
+        "ticker": "GLD",
+        "local_return": 0.05,
+        "fx_return": -0.05,
+        "eur_return": -0.0025000000000000577,
+        "nav_contribution": -0.00019267992184398728,
+        "pnl_eur": -24.577310726416343
+      },
+      {
+        "scenario": "Inflation shock",
+        "ticker": "SLV",
+        "local_return": -0.1,
+        "fx_return": -0.05,
+        "eur_return": -0.14500000000000002,
+        "nav_contribution": -0.002284687326506068,
+        "pnl_eur": -291.4235681583411
+      },
+      {
+        "scenario": "Inflation shock",
+        "ticker": "CPER",
+        "local_return": -0.1,
+        "fx_return": -0.05,
+        "eur_return": -0.14500000000000002,
+        "nav_contribution": -0.0,
+        "pnl_eur": -0.0
+      },
+      {
+        "scenario": "Inflation shock",
+        "ticker": "BNO",
+        "local_return": 0.35,
+        "fx_return": -0.05,
+        "eur_return": 0.2825,
+        "nav_contribution": 0.002069606096270722,
+        "pnl_eur": 263.98885583167663
+      },
+      {
+        "scenario": "Inflation shock",
+        "ticker": "BTC-USD",
+        "local_return": -0.35,
+        "fx_return": -0.05,
+        "eur_return": -0.38250000000000006,
+        "nav_contribution": -0.007778561007896609,
+        "pnl_eur": -992.1952898146614
+      },
+      {
+        "scenario": "Inflation shock",
+        "ticker": "ETH-USD",
+        "local_return": -0.35,
+        "fx_return": -0.05,
+        "eur_return": -0.38250000000000006,
+        "nav_contribution": -0.0030958526182217993,
+        "pnl_eur": -394.8918550155678
+      },
+      {
+        "scenario": "Liquidity shock",
+        "ticker": "VT",
+        "local_return": -0.3,
+        "fx_return": 0.12,
+        "eur_return": -0.21599999999999997,
+        "nav_contribution": -0.07843303162500165,
+        "pnl_eur": -10004.534831726474
+      },
+      {
+        "scenario": "Liquidity shock",
+        "ticker": "VOO",
+        "local_return": -0.3,
+        "fx_return": 0.12,
+        "eur_return": -0.21599999999999997,
+        "nav_contribution": -0.01734595102580972,
+        "pnl_eur": -2212.5648802770124
+      },
+      {
+        "scenario": "Liquidity shock",
+        "ticker": "IEUR",
+        "local_return": -0.3,
+        "fx_return": 0.12,
+        "eur_return": -0.21599999999999997,
+        "nav_contribution": -0.01056575679064493,
+        "pnl_eur": -1347.7163848638306
+      },
+      {
+        "scenario": "Liquidity shock",
+        "ticker": "CME",
+        "local_return": -0.4,
+        "fx_return": 0.12,
+        "eur_return": -0.32799999999999996,
+        "nav_contribution": -0.01460978706956015,
+        "pnl_eur": -1863.5531560267991
+      },
+      {
+        "scenario": "Liquidity shock",
+        "ticker": "NVO",
+        "local_return": -0.4,
+        "fx_return": 0.12,
+        "eur_return": -0.32799999999999996,
+        "nav_contribution": -0.0,
+        "pnl_eur": -0.0
+      },
+      {
+        "scenario": "Liquidity shock",
+        "ticker": "RHM.DE",
+        "local_return": -0.4,
+        "fx_return": 0.0,
+        "eur_return": -0.4,
+        "nav_contribution": -0.014434325261480566,
+        "pnl_eur": -1841.1721038833252
+      },
+      {
+        "scenario": "Liquidity shock",
+        "ticker": "SU.PA",
+        "local_return": -0.4,
+        "fx_return": 0.0,
+        "eur_return": -0.4,
+        "nav_contribution": -0.012177807273490208,
+        "pnl_eur": -1553.3416791051168
+      },
+      {
+        "scenario": "Liquidity shock",
+        "ticker": "UL",
+        "local_return": -0.4,
+        "fx_return": 0.12,
+        "eur_return": -0.32799999999999996,
+        "nav_contribution": -0.00657731589736228,
+        "pnl_eur": -838.9703245061556
+      },
+      {
+        "scenario": "Liquidity shock",
+        "ticker": "IEF",
+        "local_return": -0.0523125,
+        "fx_return": 0.12,
+        "eur_return": 0.06141000000000019,
+        "nav_contribution": 0.005157019295166239,
+        "pnl_eur": 657.8042196947282
+      },
+      {
+        "scenario": "Liquidity shock",
+        "ticker": "SHY",
+        "local_return": -0.0133875,
+        "fx_return": 0.12,
+        "eur_return": 0.10500600000000015,
+        "nav_contribution": 0.012177604849461803,
+        "pnl_eur": 1553.3158588836998
+      },
+      {
+        "scenario": "Liquidity shock",
+        "ticker": "GLD",
+        "local_return": -0.15,
+        "fx_return": 0.12,
+        "eur_return": -0.04799999999999993,
+        "nav_contribution": -0.003699454499404465,
+        "pnl_eur": -471.88436594718223
+      },
+      {
+        "scenario": "Liquidity shock",
+        "ticker": "SLV",
+        "local_return": -0.35,
+        "fx_return": 0.12,
+        "eur_return": -0.2719999999999999,
+        "nav_contribution": -0.004285758295238967,
+        "pnl_eur": -546.6704175108189
+      },
+      {
+        "scenario": "Liquidity shock",
+        "ticker": "CPER",
+        "local_return": -0.35,
+        "fx_return": 0.12,
+        "eur_return": -0.2719999999999999,
+        "nav_contribution": -0.0,
+        "pnl_eur": -0.0
+      },
+      {
+        "scenario": "Liquidity shock",
+        "ticker": "BNO",
+        "local_return": -0.35,
+        "fx_return": 0.12,
+        "eur_return": -0.2719999999999999,
+        "nav_contribution": -0.00199268268384296,
+        "pnl_eur": -254.17688065917173
+      },
+      {
+        "scenario": "Liquidity shock",
+        "ticker": "BTC-USD",
+        "local_return": -0.6,
+        "fx_return": 0.12,
+        "eur_return": -0.5519999999999999,
+        "nav_contribution": -0.011225531180023339,
+        "pnl_eur": -1431.8739868697853
+      },
+      {
+        "scenario": "Liquidity shock",
+        "ticker": "ETH-USD",
+        "local_return": -0.6,
+        "fx_return": 0.12,
+        "eur_return": -0.5519999999999999,
+        "nav_contribution": -0.004467740249041654,
+        "pnl_eur": -569.8831476303094
+      },
+      {
+        "scenario": "EUR appreciation",
+        "ticker": "VT",
+        "local_return": 0.0,
+        "fx_return": -0.15,
+        "eur_return": -0.15000000000000002,
+        "nav_contribution": -0.05446738307291783,
+        "pnl_eur": -6947.593633143387
+      },
+      {
+        "scenario": "EUR appreciation",
+        "ticker": "VOO",
+        "local_return": 0.0,
+        "fx_return": -0.15,
+        "eur_return": -0.15000000000000002,
+        "nav_contribution": -0.012045799323478976,
+        "pnl_eur": -1536.503389081259
+      },
+      {
+        "scenario": "EUR appreciation",
+        "ticker": "IEUR",
+        "local_return": 0.0,
+        "fx_return": -0.15,
+        "eur_return": -0.15000000000000002,
+        "nav_contribution": -0.0073373311046145365,
+        "pnl_eur": -935.9141561554381
+      },
+      {
+        "scenario": "EUR appreciation",
+        "ticker": "CME",
+        "local_return": 0.0,
+        "fx_return": -0.15,
+        "eur_return": -0.15000000000000002,
+        "nav_contribution": -0.00668130506229885,
+        "pnl_eur": -852.2346750122558
+      },
+      {
+        "scenario": "EUR appreciation",
+        "ticker": "NVO",
+        "local_return": 0.0,
+        "fx_return": -0.15,
+        "eur_return": -0.15000000000000002,
+        "nav_contribution": -0.0,
+        "pnl_eur": -0.0
+      },
+      {
+        "scenario": "EUR appreciation",
+        "ticker": "RHM.DE",
+        "local_return": 0.0,
+        "fx_return": 0.0,
+        "eur_return": 0.0,
+        "nav_contribution": 0.0,
+        "pnl_eur": 0.0
+      },
+      {
+        "scenario": "EUR appreciation",
+        "ticker": "SU.PA",
+        "local_return": 0.0,
+        "fx_return": 0.0,
+        "eur_return": 0.0,
+        "nav_contribution": 0.0,
+        "pnl_eur": 0.0
+      },
+      {
+        "scenario": "EUR appreciation",
+        "ticker": "UL",
+        "local_return": 0.0,
+        "fx_return": -0.15,
+        "eur_return": -0.15000000000000002,
+        "nav_contribution": -0.0030079188555010438,
+        "pnl_eur": -383.6754532802542
+      },
+      {
+        "scenario": "EUR appreciation",
+        "ticker": "IEF",
+        "local_return": 0.0,
+        "fx_return": -0.15,
+        "eur_return": -0.15000000000000002,
+        "nav_contribution": -0.012596529787899912,
+        "pnl_eur": -1606.751880055511
+      },
+      {
+        "scenario": "EUR appreciation",
+        "ticker": "SHY",
+        "local_return": 0.0,
+        "fx_return": -0.15,
+        "eur_return": -0.15000000000000002,
+        "nav_contribution": -0.017395584322984096,
+        "pnl_eur": -2218.895861498911
+      },
+      {
+        "scenario": "EUR appreciation",
+        "ticker": "GLD",
+        "local_return": 0.0,
+        "fx_return": -0.15,
+        "eur_return": -0.15000000000000002,
+        "nav_contribution": -0.011560795310638972,
+        "pnl_eur": -1474.6386435849467
+      },
+      {
+        "scenario": "EUR appreciation",
+        "ticker": "SLV",
+        "local_return": 0.0,
+        "fx_return": -0.15,
+        "eur_return": -0.15000000000000002,
+        "nav_contribution": -0.0023634696481097256,
+        "pnl_eur": -301.4726567155253
+      },
+      {
+        "scenario": "EUR appreciation",
+        "ticker": "CPER",
+        "local_return": 0.0,
+        "fx_return": -0.15,
+        "eur_return": -0.15000000000000002,
+        "nav_contribution": -0.0,
+        "pnl_eur": -0.0
+      },
+      {
+        "scenario": "EUR appreciation",
+        "ticker": "BNO",
+        "local_return": 0.0,
+        "fx_return": -0.15,
+        "eur_return": -0.15000000000000002,
+        "nav_contribution": -0.0010989058918251624,
+        "pnl_eur": -140.17107389292565
+      },
+      {
+        "scenario": "EUR appreciation",
+        "ticker": "BTC-USD",
+        "local_return": 0.0,
+        "fx_return": -0.15,
+        "eur_return": -0.15000000000000002,
+        "nav_contribution": -0.003050416081528082,
+        "pnl_eur": -389.0961920841809
+      },
+      {
+        "scenario": "EUR appreciation",
+        "ticker": "ETH-USD",
+        "local_return": 0.0,
+        "fx_return": -0.15,
+        "eur_return": -0.15000000000000002,
+        "nav_contribution": -0.0012140598502830586,
+        "pnl_eur": -154.85955098649717
+      }
+    ]
+  },
+  "chart": {
+    "kind": "bar",
+    "labels": [
+      "Growth shock",
+      "Inflation shock",
+      "Liquidity shock",
+      "EUR appreciation"
+    ],
+    "values": [
+      -10.27841401501605,
+      -17.245529446268478,
+      -16.24805177062728,
+      -13.281949831208026
+    ],
+    "ylabel": "Assumed EUR portfolio return (%)",
+    "title": "Joint asset and currency shocks \u00b7 current frozen weights"
+  },
+  "inputs": [
+    "Weights and NAV: 25 September 2026; cash unchanged; no pending fill.",
+    "USD shock means change in EUR per USD. Asset and FX effects compound, including the cross term.",
+    "IEF/SHY durations 7.2/1.8 and convexities 60/4 are teaching assumptions, not current fund analytics."
+  ],
+  "limitation": "Stress severities are chosen assumptions. Applying a common listing-currency shock can double-count economic FX exposures embedded in global assets. Nonlinear rate approximation, no dynamic hedge, liquidity haircut, counterparty default, tax or future cash flows. This does not claim to reproduce a particular crisis or regulatory stress test."
+}

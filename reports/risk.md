@@ -1,6 +1,6 @@
 # Capital weights versus risk contributions
 
-Research authored 28 September 2026 · Historical risk diagnostic
+Research authored 2026-09-28 · Historical risk diagnostic
 
 ## Question
 

@@ -1,0 +1,138 @@
+{
+  "authored": "2026-10-03",
+  "summary": "The frozen 2.8% crypto capital allocation contributes 6.4% of sample portfolio variance. Cash-funded alternatives are compared without selecting the best historical return.",
+  "tables": {
+    "allocation_grid": [
+      {
+        "crypto_weight": 0.0,
+        "btc_weight": 0.0,
+        "eth_weight": 0.0,
+        "cash_weight": 0.07643618612744585,
+        "annual_vol": 0.12012838597788011,
+        "crypto_variance_share": 0.0,
+        "stressed_annual_vol": 0.14831701374001605,
+        "total_return": 0.7686695230021356,
+        "max_drawdown": -0.10916676530850666,
+        "daily_es975": 0.020183128722633788
+      },
+      {
+        "crypto_weight": 0.01,
+        "btc_weight": 0.0071530854677201985,
+        "eth_weight": 0.0028469145322798017,
+        "cash_weight": 0.06643618612744584,
+        "annual_vol": 0.1225598943796246,
+        "crypto_variance_share": 0.02067823415946351,
+        "stressed_annual_vol": 0.15265757836038252,
+        "total_return": 0.7889483983381931,
+        "max_drawdown": -0.11227407180190918,
+        "daily_es975": 0.020714259183000714
+      },
+      {
+        "crypto_weight": 0.02,
+        "btc_weight": 0.014306170935440397,
+        "eth_weight": 0.005693829064559603,
+        "cash_weight": 0.05643618612744583,
+        "annual_vol": 0.12519286784636766,
+        "crypto_variance_share": 0.04360551871191251,
+        "stressed_annual_vol": 0.1570837693331734,
+        "total_return": 0.8091839996676826,
+        "max_drawdown": -0.11537447142728674,
+        "daily_es975": 0.021271175376570504
+      },
+      {
+        "crypto_weight": 0.0284298395454076,
+        "btc_weight": 0.02033610721018721,
+        "eth_weight": 0.008093732335220389,
+        "cash_weight": 0.04800634658203817,
+        "annual_vol": 0.12755976509877842,
+        "crypto_variance_share": 0.06428864857803096,
+        "stressed_annual_vol": 0.16087629341674486,
+        "total_return": 0.8262037482572933,
+        "max_drawdown": -0.11798269342487067,
+        "daily_es975": 0.02174064679177375
+      },
+      {
+        "crypto_weight": 0.03,
+        "btc_weight": 0.021459256403160595,
+        "eth_weight": 0.008540743596839404,
+        "cash_weight": 0.04643618612744582,
+        "annual_vol": 0.12801487595358035,
+        "crypto_variance_share": 0.06825210054772711,
+        "stressed_annual_vol": 0.1615885504481676,
+        "total_return": 0.82936963696206,
+        "max_drawdown": -0.11846796437226537,
+        "daily_es975": 0.021828091570140287
+      },
+      {
+        "crypto_weight": 0.05,
+        "btc_weight": 0.03576542733860099,
+        "eth_weight": 0.01423457266139901,
+        "cash_weight": 0.026436186127445804,
+        "annual_vol": 0.13417749679701507,
+        "crypto_variance_share": 0.12082637860682963,
+        "stressed_annual_vol": 0.1708089043488894,
+        "total_return": 0.8695639946213276,
+        "max_drawdown": -0.12463423130496265,
+        "daily_es975": 0.023043594913702822
+      }
+    ],
+    "weekend_coverage": [
+      {
+        "ticker": "BTC-USD",
+        "friday_to_sunday_observations": 260,
+        "worst_spot_gap": -0.08503893032880816,
+        "coverage": "Observed USD spot only"
+      },
+      {
+        "ticker": "ETH-USD",
+        "friday_to_sunday_observations": 260,
+        "worst_spot_gap": -0.1607513247216601,
+        "coverage": "Observed USD spot only"
+      }
+    ]
+  },
+  "chart": {
+    "kind": "lines",
+    "x": [
+      0.0,
+      1.0,
+      2.0,
+      2.84298395454076,
+      3.0,
+      5.0
+    ],
+    "series": [
+      {
+        "label": "Sample covariance",
+        "values": [
+          12.012838597788011,
+          12.25598943796246,
+          12.519286784636765,
+          12.755976509877842,
+          12.801487595358035,
+          13.417749679701508
+        ]
+      },
+      {
+        "label": "Higher-correlation stress",
+        "values": [
+          14.831701374001604,
+          15.26575783603825,
+          15.70837693331734,
+          16.087629341674486,
+          16.15885504481676,
+          17.08089043488894
+        ]
+      }
+    ],
+    "xlabel": "Crypto capital weight (%)",
+    "ylabel": "Annualised portfolio volatility (%)",
+    "title": "BTC/ETH in current proportions \u00b7 allocation funded from EUR cash"
+  },
+  "inputs": [
+    "Other current weights held fixed; changes to crypto are financed from zero-return cash.",
+    "Stress correlation = 50% sample + 50% all-ones matrix; historical marginal volatilities unchanged. This is an assumed co-movement shock.",
+    "Common-session risk estimates exclude most crypto weekend moves. Separate coverage audit reports whether weekend pairs exist."
+  ],
+  "limitation": "Historical covariance can understate simultaneous deleveraging, exchange failure and weekend gaps. A USD spot proxy omits custody, funding, exchange, staking and slippage risks. Higher correlation alone is not a full crisis scenario. Historical constant-weight performance is not a proposed trade or evidence that a crypto weight is optimal."
+}

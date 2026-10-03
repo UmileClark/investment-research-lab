@@ -1,6 +1,6 @@
 # Carry, break-even and funding stress
 
-Research authored 28 September 2026 · Mechanics + observed spot risk
+Research authored 2026-09-28 · Mechanics + observed spot risk
 
 ## Question
 

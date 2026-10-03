@@ -1,0 +1,161 @@
+{
+  "authored": "2026-10-03",
+  "summary": "USD-listed positions are 88.5% of NAV. A training-window minimum-variance translation hedge is 98.8% before the 0\u2013100% bound; this is not an economic currency look-through.",
+  "tables": {
+    "hedge_sensitivity": [
+      {
+        "policy": "No hedge",
+        "hedge_ratio": 0.0,
+        "annual_hedge_drag": 0.0,
+        "usd_listing_weight": 0.8854633220805349,
+        "total_return": 0.31416101957219933,
+        "annual_vol": 0.120615823648842,
+        "max_drawdown": -0.11798269342487055,
+        "daily_es975": 0.021055900780883097
+      },
+      {
+        "policy": "No hedge",
+        "hedge_ratio": 0.0,
+        "annual_hedge_drag": 0.01,
+        "usd_listing_weight": 0.8854633220805349,
+        "total_return": 0.31416101957219933,
+        "annual_vol": 0.120615823648842,
+        "max_drawdown": -0.11798269342487055,
+        "daily_es975": 0.021055900780883097
+      },
+      {
+        "policy": "No hedge",
+        "hedge_ratio": 0.0,
+        "annual_hedge_drag": 0.03,
+        "usd_listing_weight": 0.8854633220805349,
+        "total_return": 0.31416101957219933,
+        "annual_vol": 0.120615823648842,
+        "max_drawdown": -0.11798269342487055,
+        "daily_es975": 0.021055900780883097
+      },
+      {
+        "policy": "Half hedge",
+        "hedge_ratio": 0.5,
+        "annual_hedge_drag": 0.0,
+        "usd_listing_weight": 0.8854633220805349,
+        "total_return": 0.3302975061541693,
+        "annual_vol": 0.10783664190538651,
+        "max_drawdown": -0.09782290349515921,
+        "daily_es975": 0.019268855078966078
+      },
+      {
+        "policy": "Half hedge",
+        "hedge_ratio": 0.5,
+        "annual_hedge_drag": 0.01,
+        "usd_listing_weight": 0.8854633220805349,
+        "total_return": 0.31903985483738095,
+        "annual_vol": 0.10783664190538651,
+        "max_drawdown": -0.09834747382740638,
+        "daily_es975": 0.01928642379567402
+      },
+      {
+        "policy": "Half hedge",
+        "hedge_ratio": 0.5,
+        "annual_hedge_drag": 0.03,
+        "usd_listing_weight": 0.8854633220805349,
+        "total_return": 0.29680896924910427,
+        "annual_vol": 0.10783664190538651,
+        "max_drawdown": -0.09939572733610424,
+        "daily_es975": 0.019321561229089918
+      },
+      {
+        "policy": "Full opening-notional hedge",
+        "hedge_ratio": 1.0,
+        "annual_hedge_drag": 0.0,
+        "usd_listing_weight": 0.8854633220805349,
+        "total_return": 0.3439225435044668,
+        "annual_vol": 0.1039936763233678,
+        "max_drawdown": -0.08206697080771419,
+        "daily_es975": 0.018218474504647794
+      },
+      {
+        "policy": "Full opening-notional hedge",
+        "hedge_ratio": 1.0,
+        "annual_hedge_drag": 0.01,
+        "usd_listing_weight": 0.8854633220805349,
+        "total_return": 0.3212731939401059,
+        "annual_vol": 0.1039936763233678,
+        "max_drawdown": -0.0825212199116584,
+        "daily_es975": 0.018253611938063685
+      },
+      {
+        "policy": "Full opening-notional hedge",
+        "hedge_ratio": 1.0,
+        "annual_hedge_drag": 0.03,
+        "usd_listing_weight": 0.8854633220805349,
+        "total_return": 0.277110914382086,
+        "annual_vol": 0.1039936763233678,
+        "max_drawdown": -0.08342909199138537,
+        "daily_es975": 0.018323886804895474
+      },
+      {
+        "policy": "Training minimum variance (bounded)",
+        "hedge_ratio": 0.9879342411165336,
+        "annual_hedge_drag": 0.0,
+        "usd_listing_weight": 0.8854633220805349,
+        "total_return": 0.3436239338816509,
+        "annual_vol": 0.103968933605592,
+        "max_drawdown": -0.08204923274690734,
+        "daily_es975": 0.018235516702883148
+      },
+      {
+        "policy": "Training minimum variance (bounded)",
+        "hedge_ratio": 0.9879342411165336,
+        "annual_hedge_drag": 0.01,
+        "usd_listing_weight": 0.8854633220805349,
+        "total_return": 0.32125054482244275,
+        "annual_vol": 0.103968933605592,
+        "max_drawdown": -0.08249801050822614,
+        "daily_es975": 0.01827023017649966
+      },
+      {
+        "policy": "Training minimum variance (bounded)",
+        "hedge_ratio": 0.9879342411165336,
+        "annual_hedge_drag": 0.03,
+        "usd_listing_weight": 0.8854633220805349,
+        "total_return": 0.27761298327054096,
+        "annual_vol": 0.103968933605592,
+        "max_drawdown": -0.08353641891118113,
+        "daily_es975": 0.01833965712373269
+      }
+    ],
+    "calibration": [
+      {
+        "training_start": "2021-09-28",
+        "training_end": "2024-09-27",
+        "evaluation_start": "2024-09-30",
+        "evaluation_end": "2026-09-18",
+        "raw_ratio": 0.9879342411165336,
+        "bounded_ratio": 0.9879342411165336
+      }
+    ]
+  },
+  "chart": {
+    "kind": "bar",
+    "labels": [
+      "No hedge",
+      "Half hedge",
+      "Full opening-notional hedge",
+      "Training minimum variance (bounded)"
+    ],
+    "values": [
+      12.0615823648842,
+      10.783664190538651,
+      10.39936763233678,
+      10.3968933605592
+    ],
+    "ylabel": "Annualised EUR volatility (%)",
+    "title": "Opening-notional FX hedge \u00b7 assumed 1% annual drag"
+  },
+  "inputs": [
+    "Current 25 September weights applied to past returns; hypothetical daily constant weights.",
+    "Hedge payoff is -h \u00d7 starting USD-listed weight \u00d7 change in EUR per USD.",
+    "0%, 1% and 3% annual drag are sensitivity assumptions, not observed forward points. No dollar cash position exists in the base book."
+  ],
+  "limitation": "This is a translation counterfactual, not a funded forward strategy. The hedge covers opening dollar notional, leaving asset-return \u00d7 FX interaction. Daily resetting, margin, basis and executable spreads are omitted. VT, IEUR, ADRs and commodities have economic exposures different from their listing currency; a universal USD hedge can introduce new risk."
+}

@@ -1,6 +1,6 @@
 # Duration, convexity and curve risk
 
-Research authored 28 September 2026 · Illustrative scenario model
+Research authored 2026-09-28 · Illustrative scenario model
 
 ## Question
 

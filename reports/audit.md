@@ -1,6 +1,6 @@
 # Portfolio accounting audit
 
-Research authored 28 September 2026 · Frozen-data reconciliation
+Research authored 2026-09-28 · Frozen-data reconciliation
 
 ## Question
 

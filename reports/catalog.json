@@ -1,5 +1,5 @@
 {
-  "authored": "2026-09-28",
+  "authored": "2026-10-03",
   "portfolio_marks": "2026-09-25",
   "projects": [
     {
@@ -27,6 +27,7 @@
         "archive"
       ],
       "status": "Frozen-data reconciliation",
+      "authored": "2026-09-28",
       "finding": "All 515 historical NAV marks reconcile. Replayed NAV: €126,505.91; current marks: €127,555.12. Pending order excluded."
     },
     {
@@ -56,6 +57,7 @@
         "crypto"
       ],
       "status": "Historical risk diagnostic",
+      "authored": "2026-09-28",
       "finding": "Current weights on the pre-inception sample imply 13.19% annual volatility; daily 97.5% ES is 2.17%. The block-bootstrap volatility range is 11.87%–14.67%."
     },
     {
@@ -83,6 +85,7 @@
         "archive"
       ],
       "status": "Exact accounting identity",
+      "authored": "2026-09-28",
       "finding": "18–25 September: €52.27 local-price P&L plus €996.95 currency P&L equals €1,049.21."
     },
     {
@@ -110,6 +113,7 @@
         "term"
       ],
       "status": "Illustrative scenario model",
+      "authored": "2026-09-28",
       "finding": "The pending 2% shift reduces assumed portfolio duration by 0.108 years. Two-leg costs are €12.76; a parallel yield rise of 9.3 bp covers them in the instantaneous approximation."
     },
     {
@@ -139,6 +143,7 @@
         "rates2024"
       ],
       "status": "Mechanics + observed spot risk",
+      "authored": "2026-09-28",
       "finding": "Illustrative quarterly carry is erased by spot losses of 0.92% for AUD/JPY and 2.40% for MXN/JPY. Neither is a funded portfolio trade."
     },
     {
@@ -167,6 +172,7 @@
         "cme2023"
       ],
       "status": "Historical valuation sensitivity",
+      "authored": "2026-09-28",
       "finding": "The September-2024 CME price requires 11.04% annual cash growth under the stated discount assumptions. Base proxy value: $192.35; 77.1% comes from the terminal value."
     },
     {
@@ -195,6 +201,7 @@
         "backtest"
       ],
       "status": "Retrospective rule comparison",
+      "authored": "2026-09-28",
       "finding": "Buy hold: 26.99% net, €248 fees; Monthly: 27.20% net, €468 fees; Drift: 29.35% net, €394 fees. These are historical comparisons, not verified alpha."
     },
     {
@@ -223,6 +230,7 @@
         "gold"
       ],
       "status": "Fund data + synthetic curves",
+      "authored": "2026-09-28",
       "finding": "With unchanged spot and an identically resetting 2% contango curve, the illustrative collateralised futures return is -19.69% over twelve months. This is a mechanics example, not a forecast."
     },
     {
@@ -253,7 +261,285 @@
         "rhm25"
       ],
       "status": "Descriptive retrospective study",
+      "authored": "2026-09-28",
       "finding": "NVO 2024-12-20: -18.28% event-day abnormal return; NVO 2025-07-29: -21.59% event-day abnormal return; RHM.DE 2025-03-12: 9.47% event-day abnormal return. Selected events do not establish causality."
+    },
+    {
+      "id": "stress",
+      "title": "Cross-asset stress laboratory",
+      "category": "Portfolio construction",
+      "module": "stress.py",
+      "question": "What breaks when rates, equities, crypto and currencies move together?",
+      "method": "Apply four explicit, hypothetical joint shocks to the 25 September holdings. Revalue local returns and EUR conversion with their interaction. Approximate IEF and SHY with assumed duration and convexity; reconcile holding-level impacts to total NAV.",
+      "decision": "Use the largest losses to identify common exposures and specify an acceptable loss budget before considering any hedge.",
+      "falsifier": "Different FX behaviour, convexity, correlations or liquidity can reverse the scenario ranking. Shock sizes are assumptions, not estimated percentiles.",
+      "next": "Source dated ETF duration and curve data, add spread and liquidity shocks, and map fund economic currency exposures.",
+      "interview": "Why can a positive USD move cushion losses for a EUR investor? Which cross term is lost by adding local and currency returns?",
+      "sources": [
+        "stress_principles",
+        "archive"
+      ],
+      "routes": [
+        [
+          "current",
+          "Current weights"
+        ],
+        [
+          "fixed-income",
+          "Rates thesis"
+        ]
+      ],
+      "status": "Hypothetical joint shocks",
+      "authored": "2026-10-03",
+      "finding": "The assumed inflation shock produces -17.2% (-21,998 EUR) on the 25 September book. This is a scenario, not a probability or VaR estimate."
+    },
+    {
+      "id": "currency",
+      "title": "EUR currency hedge frontier",
+      "category": "Performance & FX",
+      "module": "currency.py",
+      "question": "How sensitive is portfolio risk to partial currency hedging and its cost?",
+      "method": "Compare zero, half, full and estimated minimum-variance hedging of opening USD-listed notional. Estimate the hedge coefficient using observations through 27 September 2024; evaluate later observations with three assumed annual carry drags. Current weights make this a retrospective exposure experiment.",
+      "decision": "Separate currency protection from expected carry. Compare risk reduction with a cost hurdle before acquiring an actual forward.",
+      "falsifier": "Quotation currency is not economic exposure. Daily reset assumptions, proxy basis and changing covariance may make a calculated hedge inappropriate.",
+      "next": "Archive executable EUR/USD forward points and fund look-through before documenting a prospective hedge policy.",
+      "interview": "Derive Cov(portfolio, hedge-leg)/Var(hedge-leg). Why is hedging every USD-listed ETF potentially an overhedge?",
+      "sources": [
+        "basis",
+        "archive"
+      ],
+      "routes": [
+        [
+          "fx",
+          "FX research"
+        ],
+        [
+          "project/attribution",
+          "Price / FX attribution"
+        ]
+      ],
+      "status": "Historical proxy sensitivity",
+      "authored": "2026-10-03",
+      "finding": "USD-listed positions are 88.5% of NAV. A training-window minimum-variance translation hedge is 98.8% before the 0–100% bound; this is not an economic currency look-through."
+    },
+    {
+      "id": "factors",
+      "title": "Factor exposure and model fragility",
+      "category": "Portfolio construction",
+      "module": "factors.py",
+      "question": "How much of the basket is explained by equity, duration and gold proxies?",
+      "method": "Regress the fixed current-weight EUR basket on VT, IEF minus SHY, and GLD. Compare pre-inception and recent 252-session windows. Show Newey–West uncertainty, residual volatility, correlation conditioning and first principal-component share.",
+      "decision": "Identify broad drivers and exposure instability. Large R-squared can be mechanical because regressors are also portfolio holdings.",
+      "falsifier": "Omitted factors, overlap, collinearity and shifting coefficients undermine interpretation. The intercept is not a risk-free-adjusted alpha estimate.",
+      "next": "Use non-overlapping, investable factors, explicit EUR cash returns and rolling out-of-sample attribution.",
+      "interview": "Distinguish statistical fit, investable factor returns and causal explanation; explain why HAC errors do not cure misspecification.",
+      "sources": [
+        "hac",
+        "archive"
+      ],
+      "routes": [
+        [
+          "current",
+          "Portfolio"
+        ],
+        [
+          "project/risk",
+          "Risk contributions"
+        ]
+      ],
+      "status": "Descriptive regression",
+      "authored": "2026-10-03",
+      "finding": "Three tradable proxies explain 92.8% of the fixed-weight basket's daily variation over the last 252 common sessions. Explanatory fit is not causality or alpha."
+    },
+    {
+      "id": "trend",
+      "title": "Trend rule with delayed execution",
+      "category": "Systematic strategies",
+      "module": "trend.py",
+      "question": "Does a transparent long/cash trend rule change the portfolio’s loss profile?",
+      "method": "Use each instrument’s lagged 252-session EUR return to retain its original weight or move that sleeve to cash. Review monthly and fill only at the next available common close. Compare the same initial allocation without the signal; report all 126/189/252-session and cost sensitivities.",
+      "decision": "Evaluate drawdown, cash drag, turnover and implementation together. Do not select a parameter because it maximises this short sample’s return.",
+      "falsifier": "Whipsaws, slow re-entry, stale common dates and hindsight in selecting the universe can erase apparent protection.",
+      "next": "Preregister one rule and cost assumption, then log forward signals without tuning on the new observations.",
+      "interview": "Explain the distinction between a past-return signal, its later executable fill, and the published futures momentum literature.",
+      "sources": [
+        "tsmom",
+        "archive"
+      ],
+      "routes": [
+        [
+          "project/rebalancing",
+          "Baseline trading rules"
+        ]
+      ],
+      "status": "Retrospective policy experiment",
+      "authored": "2026-10-03",
+      "finding": "The stated 252-session long/cash rule returned 24.8% after costs versus 27.2% for the same allocation reset monthly. All nine lookback/cost cases are disclosed; none is selected as optimal."
+    },
+    {
+      "id": "volcontrol",
+      "title": "Cash-funded volatility targeting",
+      "category": "Systematic strategies",
+      "module": "volcontrol.py",
+      "question": "What does reducing exposure after volatility rises cost and protect?",
+      "method": "Estimate 60-session realised EUR basket volatility using only available closes. Scale original risky targets by target-volatility/estimated-volatility, clipped to 25–100%; review monthly and fill later. Compare 8%, 10%, 12% targets and zero/base/double transaction costs.",
+      "decision": "Treat exposure control as a risk policy with cash drag and turnover. A target is an estimator input, not a guaranteed realised volatility.",
+      "falsifier": "Gaps can occur before risk is reduced; rapid recoveries can punish delayed re-entry. The policy cannot lever up when the portfolio is below target.",
+      "next": "Specify a prospective volatility band, review cadence and financing assumptions before comparing realised forward risk.",
+      "interview": "Why is inverse volatility not inverse variance? Why does no leverage make a low-volatility regime asymmetric?",
+      "sources": [
+        "volmanaged",
+        "archive"
+      ],
+      "routes": [
+        [
+          "project/risk",
+          "Risk estimation"
+        ],
+        [
+          "project/rebalancing",
+          "Rebalancing"
+        ]
+      ],
+      "status": "Capped exposure experiment",
+      "authored": "2026-10-03",
+      "finding": "The 10% target rule realised 10.6% volatility and -11.3% maximum drawdown versus 12.6% and -12.9% for the monthly baseline. A target is not a risk guarantee."
+    },
+    {
+      "id": "drawdowns",
+      "title": "Drawdown and recovery anatomy",
+      "category": "Risk validation",
+      "module": "drawdowns.py",
+      "question": "How deep and how long were losses, and how path-dependent is that result?",
+      "method": "Extract peak–trough–recovery episodes from the reconstructed NAV, including unrecovered episodes. Separately resample the current-weight return proxy into 600 one-year paths at block lengths 1, 5 and 20; retain the full sensitivity rather than selecting a favourable block.",
+      "decision": "Discuss both capital loss and time underwater. The drawdown tolerated by an investor may differ from a one-day VaR budget.",
+      "falsifier": "Resampling cannot create unseen crises. Current weights and stationary historical blocks may be poor approximations to future regimes.",
+      "next": "Extend history across distinct crises and compare explicit liquidity stresses with prospective risk limits.",
+      "interview": "Why is maximum drawdown not a one-day risk statistic? What information is lost when returns are randomly reordered?",
+      "sources": [
+        "drawdown",
+        "archive"
+      ],
+      "routes": [
+        [
+          "current",
+          "Portfolio path"
+        ],
+        [
+          "project/stress",
+          "Stress scenarios"
+        ]
+      ],
+      "status": "Path-risk diagnostic",
+      "authored": "2026-10-03",
+      "finding": "The reconstructed ledger’s deepest drawdown was -12.4%. Its episode lasted 144 recorded sessions; recovery status and dates are retained. Resampling current weights is a separate risk experiment."
+    },
+    {
+      "id": "varchecks",
+      "title": "VaR forecast coverage checks",
+      "category": "Risk validation",
+      "module": "varchecks.py",
+      "question": "Do simple daily loss forecasts produce the expected number of breaches?",
+      "method": "Create lagged 250-session historical and exponentially weighted Gaussian risk forecasts at 95% and 99%. Count later exceedances, show Wilson coverage intervals, Kupiec unconditional-coverage likelihood ratios and descriptive adjacent-breach counts.",
+      "decision": "Check both frequency and clustering before relying on a risk number. A model that passes a small-sample coverage check can still miss crisis losses.",
+      "falsifier": "The fixed current-weight proxy is hindsight-based. Gaussian tails, sparse 99% exceptions and asymptotic p-values limit inference; clustering is not formally tested here.",
+      "next": "Maintain a prospective ledger of forecasts and realised hypothetical P&L; add independent clustering and tail-severity tests.",
+      "interview": "Why does unconditional coverage fail to detect clustered breaches? Explain the zero-exception edge case.",
+      "sources": [
+        "backtesting",
+        "archive"
+      ],
+      "routes": [
+        [
+          "project/risk",
+          "VaR / ES estimates"
+        ]
+      ],
+      "status": "Educational backtest",
+      "authored": "2026-10-03",
+      "finding": "Rolling historical 99% VaR recorded 9 breaches in 484 evaluation sessions (expected 4.8). Coverage and clustering must be examined together."
+    },
+    {
+      "id": "crypto-budget",
+      "title": "Crypto allocation and correlation stress",
+      "category": "Crypto research",
+      "module": "crypto_budget.py",
+      "question": "How much risk can a small Bitcoin/Ether allocation consume?",
+      "method": "Hold the other current weights fixed and fund 0–5% crypto allocations from EUR cash in the existing BTC/ETH proportion. Show Euler variance shares and an explicitly positive-semidefinite correlation stress. Audit whether weekend price pairs are actually present.",
+      "decision": "Set crypto exposure by its impact on total portfolio risk and liquidity, not only by its small capital weight.",
+      "falsifier": "The common-market calendar omits weekend moves; past covariance excludes custody losses and may understate deleveraging.",
+      "next": "Acquire a complete daily crypto archive and document custody, venue and gap scenarios before increasing the paper allocation.",
+      "interview": "Explain why capital weight and variance share differ and why an arbitrary shocked correlation matrix may be invalid.",
+      "sources": [
+        "crypto",
+        "archive"
+      ],
+      "routes": [
+        [
+          "asset/bitcoin",
+          "Bitcoin sleeve"
+        ],
+        [
+          "project/stress",
+          "Joint stress"
+        ]
+      ],
+      "status": "Cash-funded sizing sensitivity",
+      "authored": "2026-10-03",
+      "finding": "The frozen 2.8% crypto capital allocation contributes 6.4% of sample portfolio variance. Cash-funded alternatives are compared without selecting the best historical return."
+    },
+    {
+      "id": "option-hedges",
+      "title": "Protective puts and collar economics",
+      "category": "Derivatives research",
+      "module": "optionhedges.py",
+      "question": "What is the actual trade-off between downside protection, premium and foregone upside?",
+      "method": "Price synthetic three-month European options using Black–Scholes. Compare an unhedged underlying, a 90-strike protective put and a 90/110 collar. Include premium cash opportunity cost and per-leg fees; compare 15%, 25%, 40% assumed volatility.",
+      "decision": "State the loss floor, upside cap and funding cost explicitly before calling a hedge attractive. These payoffs do not establish that insurance is cheap.",
+      "falsifier": "Real implied skew, bid/ask costs, dividends, American exercise and basis risk can materially change the trade.",
+      "next": "Source a dated option chain and contract specifications; write a cash-funded prospective hedge thesis before any paper fill.",
+      "interview": "Derive put–call parity and explain why P&L divided by underlying notional is not return on option premium.",
+      "sources": [
+        "blackscholes",
+        "cboehedges"
+      ],
+      "routes": [
+        [
+          "project/stress",
+          "Loss scenarios"
+        ]
+      ],
+      "status": "Synthetic option mechanics",
+      "authored": "2026-10-03",
+      "finding": "At 25% assumed volatility, the 90-strike put costs 1.18 per 100 of underlying. The collar exchanges upside above 110 for call premium; neither structure is costless."
+    },
+    {
+      "id": "decision-log",
+      "title": "Prospective thesis and probability register",
+      "category": "Data & engineering",
+      "module": "decisionlog.py",
+      "question": "How can future investment judgements become auditable evidence?",
+      "method": "Validate append-only forecasts and resolutions with timestamped information cutoffs, explicit outcome rules and a SHA-256 chain. Compute binary Brier scores only for resolved registered forecasts. The empty initial register is separate from a synthetic proper-scoring demonstration.",
+      "decision": "Record probabilities, alternatives and invalidation rules before events. Preserve mistakes and unresolved outcomes; connect any later trade to the original thesis.",
+      "falsifier": "A rewritten hash chain, selective resolution or vague event definition destroys evidential value. A Git timestamp alone does not verify source availability.",
+      "next": "Enter the first owner-approved forecast with scripts/record_decision.py and publish its commit before the outcome; retain an external timestamp anchor.",
+      "interview": "Why does a proper scoring rule encourage honest probabilities, and why is a low score meaningless without a base-rate benchmark?",
+      "sources": [
+        "proper_scores"
+      ],
+      "routes": [
+        [
+          "journal",
+          "Decision journal"
+        ],
+        [
+          "lab-setup",
+          "Run locally"
+        ]
+      ],
+      "status": "Prospective infrastructure; zero forecasts",
+      "authored": "2026-10-03",
+      "finding": "0 prospective forecasts and 0 resolved outcomes are registered. No forecasting skill score is claimed. The probability-scoring chart is a labelled mathematical demonstration."
     }
   ],
   "sources": {
@@ -326,7 +612,52 @@
       "title": "MacKinlay — Event Studies in Economics and Finance (1997)",
       "url": "https://www.jstor.org/stable/2729691",
       "application": "Market-model abnormal-return framework. No significance claim or causal identification is made here."
+    },
+    "stress_principles": {
+      "title": "BCBS (2018), Stress testing principles",
+      "url": "https://www.bis.org/bcbs/publ/d450.htm",
+      "application": "Scenario design and governance motivation. The four assumed shocks are not a regulatory stress test or estimated crisis probabilities."
+    },
+    "tsmom": {
+      "title": "Moskowitz, Ooi & Pedersen (2012), Time Series Momentum",
+      "url": "https://www.aqr.com/Insights/Research/Journal-Article/Time-Series-Momentum",
+      "application": "Motivates lagged own-return signals. Our monthly long/cash ETF rule is not a replication of the paper’s futures strategy."
+    },
+    "volmanaged": {
+      "title": "Moreira & Muir (2016/2017), Volatility-Managed Portfolios",
+      "url": "https://www.nber.org/papers/w22208",
+      "application": "Motivates exposure sensitivity to realised volatility. Our capped volatility target differs from the paper’s inverse-variance factor portfolios."
+    },
+    "hac": {
+      "title": "Newey & West (1986/1987), A Simple, Positive Semi-Definite, Heteroskedasticity and Autocorrelation Consistent Covariance Matrix",
+      "url": "https://www.nber.org/papers/t0055",
+      "application": "OLS coefficient uncertainty uses a Bartlett-weighted HAC estimator with five lags. Approximate intervals do not establish causal exposures."
+    },
+    "drawdown": {
+      "title": "Chekhlov, Uryasev & Zabarankin (2005), Drawdown Measure in Portfolio Optimization",
+      "url": "https://researchconnect.stonybrook.edu/en/publications/drawdown-measure-in-portfolio-optimization/",
+      "application": "Motivates path-dependent loss analysis. The project measures episodes and block-resampling sensitivity; it does not solve the paper’s optimisation problem."
+    },
+    "backtesting": {
+      "title": "Basel Framework MAR32, Backtesting requirements",
+      "url": "https://www.bis.org/committees/bcbs/basel-framework/standard/mar/32/inforce/2023-01-01/published/2020-03-27",
+      "application": "Motivates comparison of lagged risk forecasts with subsequent losses. Coverage diagnostics here are educational, not a regulatory backtest or model certification."
+    },
+    "blackscholes": {
+      "title": "Black & Scholes (1973), The Pricing of Options and Corporate Liabilities",
+      "url": "https://doi.org/10.1086/260062",
+      "application": "European call/put pricing at assumed constant volatility, with put–call parity tested. No market-implied volatility or tradable quote is inferred."
+    },
+    "cboehedges": {
+      "title": "Cboe (2021), Hedging Downside Exposure with PPUT, CLL and CLLZ Indices",
+      "url": "https://www.cboe.com/insights/posts/benchmark-indices-series-hedging-downside-exposure-with-pput-cll-and-cllz-indices/",
+      "application": "Institutional context for protective puts and collars. Synthetic strikes and costs do not replicate a Cboe benchmark."
+    },
+    "proper_scores": {
+      "title": "Gneiting & Raftery (2007), Strictly Proper Scoring Rules, Prediction, and Estimation",
+      "url": "https://doi.org/10.1198/016214506000001437",
+      "application": "Motivates recording probabilities before outcomes and scoring with binary Brier loss. A theoretical demonstration is kept separate from personal evidence."
     }
   },
-  "disclosure": "Built with AI assistance in September 2026. The earlier portfolio is a retrospective reconstruction; these projects were not tools used live in 2024. No demonstrated predictive alpha or real-money track record is claimed."
+  "disclosure": "Built with AI assistance in September–October 2026. Ten studies added on 3 October; portfolio marks remain 25 September and empirical return panels end 18 September. The earlier portfolio is a retrospective reconstruction; these projects were not tools used live in 2024. No demonstrated predictive alpha or real-money track record is claimed."
 }

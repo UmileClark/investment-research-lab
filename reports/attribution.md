@@ -1,6 +1,6 @@
 # Price and currency attribution
 
-Research authored 28 September 2026 · Exact accounting identity
+Research authored 2026-09-28 · Exact accounting identity
 
 ## Question
 

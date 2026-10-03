@@ -1,6 +1,6 @@
 # Is more trading actually better?
 
-Research authored 28 September 2026 · Retrospective rule comparison
+Research authored 2026-09-28 · Retrospective rule comparison
 
 ## Question
 

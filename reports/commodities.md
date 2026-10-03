@@ -1,6 +1,6 @@
 # Commodity exposure and futures mechanics
 
-Research authored 28 September 2026 · Fund data + synthetic curves
+Research authored 2026-09-28 · Fund data + synthetic curves
 
 ## Question
 

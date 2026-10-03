@@ -1,0 +1,255 @@
+{
+  "authored": "2026-10-03",
+  "summary": "At 25% assumed volatility, the 90-strike put costs 1.18 per 100 of underlying. The collar exchanges upside above 110 for call premium; neither structure is costless.",
+  "tables": {
+    "volatility_sensitivity": [
+      {
+        "assumed_volatility": 0.15,
+        "put_premium_per_100": 0.20537068015131865,
+        "call_premium_per_100": 0.46641996698171617,
+        "put_floor_pnl_per_notional": -0.1030766957031453,
+        "collar_floor_pnl_per_notional": -0.09938491122206596,
+        "collar_cap_pnl_per_notional": 0.100615088777934
+      },
+      {
+        "assumed_volatility": 0.25,
+        "put_premium_per_100": 1.178836588322909,
+        "call_premium_per_100": 1.8562715101073728,
+        "put_floor_pnl_per_notional": -0.11288463920101421,
+        "collar_floor_pnl_per_notional": -0.09518970854812293,
+        "collar_cap_pnl_per_notional": 0.10481029145187705
+      },
+      {
+        "assumed_volatility": 0.4,
+        "put_premium_per_100": 3.368550999401407,
+        "call_premium_per_100": 4.529127640627507,
+        "put_floor_pnl_per_notional": -0.13494662929234238,
+        "collar_floor_pnl_per_notional": -0.09032191950079298,
+        "collar_cap_pnl_per_notional": 0.10967808049920706
+      }
+    ],
+    "expiry_payoffs": [
+      {
+        "terminal_spot": 50.0,
+        "unhedged": -0.5,
+        "protective_put": -0.11288463920101428,
+        "collar": -0.095189708548123
+      },
+      {
+        "terminal_spot": 55.0,
+        "unhedged": -0.45,
+        "protective_put": -0.11288463920101428,
+        "collar": -0.095189708548123
+      },
+      {
+        "terminal_spot": 60.0,
+        "unhedged": -0.4,
+        "protective_put": -0.11288463920101424,
+        "collar": -0.09518970854812298
+      },
+      {
+        "terminal_spot": 65.0,
+        "unhedged": -0.35,
+        "protective_put": -0.11288463920101424,
+        "collar": -0.09518970854812298
+      },
+      {
+        "terminal_spot": 70.0,
+        "unhedged": -0.3,
+        "protective_put": -0.11288463920101424,
+        "collar": -0.09518970854812298
+      },
+      {
+        "terminal_spot": 75.0,
+        "unhedged": -0.25,
+        "protective_put": -0.11288463920101424,
+        "collar": -0.09518970854812298
+      },
+      {
+        "terminal_spot": 80.0,
+        "unhedged": -0.2,
+        "protective_put": -0.11288463920101424,
+        "collar": -0.09518970854812298
+      },
+      {
+        "terminal_spot": 85.0,
+        "unhedged": -0.15,
+        "protective_put": -0.11288463920101424,
+        "collar": -0.09518970854812298
+      },
+      {
+        "terminal_spot": 90.0,
+        "unhedged": -0.1,
+        "protective_put": -0.11288463920101424,
+        "collar": -0.09518970854812298
+      },
+      {
+        "terminal_spot": 95.0,
+        "unhedged": -0.05,
+        "protective_put": -0.06288463920101424,
+        "collar": -0.045189708548122966
+      },
+      {
+        "terminal_spot": 100.0,
+        "unhedged": 0.0,
+        "protective_put": -0.01288463920101425,
+        "collar": 0.004810291451877027
+      },
+      {
+        "terminal_spot": 105.0,
+        "unhedged": 0.05,
+        "protective_put": 0.03711536079898575,
+        "collar": 0.05481029145187703
+      },
+      {
+        "terminal_spot": 110.0,
+        "unhedged": 0.1,
+        "protective_put": 0.08711536079898576,
+        "collar": 0.10481029145187704
+      },
+      {
+        "terminal_spot": 115.0,
+        "unhedged": 0.15,
+        "protective_put": 0.13711536079898576,
+        "collar": 0.10481029145187704
+      },
+      {
+        "terminal_spot": 120.0,
+        "unhedged": 0.2,
+        "protective_put": 0.18711536079898575,
+        "collar": 0.10481029145187704
+      },
+      {
+        "terminal_spot": 125.0,
+        "unhedged": 0.25,
+        "protective_put": 0.23711536079898576,
+        "collar": 0.10481029145187704
+      },
+      {
+        "terminal_spot": 130.0,
+        "unhedged": 0.3,
+        "protective_put": 0.28711536079898575,
+        "collar": 0.10481029145187701
+      },
+      {
+        "terminal_spot": 135.0,
+        "unhedged": 0.35,
+        "protective_put": 0.33711536079898574,
+        "collar": 0.10481029145187698
+      },
+      {
+        "terminal_spot": 140.0,
+        "unhedged": 0.4,
+        "protective_put": 0.38711536079898573,
+        "collar": 0.10481029145187698
+      }
+    ]
+  },
+  "chart": {
+    "kind": "lines",
+    "x": [
+      50.0,
+      55.0,
+      60.0,
+      65.0,
+      70.0,
+      75.0,
+      80.0,
+      85.0,
+      90.0,
+      95.0,
+      100.0,
+      105.0,
+      110.0,
+      115.0,
+      120.0,
+      125.0,
+      130.0,
+      135.0,
+      140.0
+    ],
+    "series": [
+      {
+        "label": "unhedged",
+        "values": [
+          -50.0,
+          -45.0,
+          -40.0,
+          -35.0,
+          -30.0,
+          -25.0,
+          -20.0,
+          -15.0,
+          -10.0,
+          -5.0,
+          0.0,
+          5.0,
+          10.0,
+          15.0,
+          20.0,
+          25.0,
+          30.0,
+          35.0,
+          40.0
+        ]
+      },
+      {
+        "label": "protective put",
+        "values": [
+          -11.288463920101428,
+          -11.288463920101428,
+          -11.288463920101425,
+          -11.288463920101425,
+          -11.288463920101425,
+          -11.288463920101425,
+          -11.288463920101425,
+          -11.288463920101425,
+          -11.288463920101425,
+          -6.288463920101424,
+          -1.288463920101425,
+          3.7115360798985755,
+          8.711536079898575,
+          13.711536079898575,
+          18.711536079898575,
+          23.711536079898575,
+          28.711536079898575,
+          33.71153607989857,
+          38.71153607989857
+        ]
+      },
+      {
+        "label": "collar",
+        "values": [
+          -9.5189708548123,
+          -9.5189708548123,
+          -9.518970854812297,
+          -9.518970854812297,
+          -9.518970854812297,
+          -9.518970854812297,
+          -9.518970854812297,
+          -9.518970854812297,
+          -9.518970854812297,
+          -4.518970854812297,
+          0.4810291451877027,
+          5.481029145187703,
+          10.481029145187703,
+          10.481029145187703,
+          10.481029145187703,
+          10.481029145187703,
+          10.481029145187701,
+          10.481029145187698,
+          10.481029145187698
+        ]
+      }
+    ],
+    "xlabel": "Underlying price at expiry (initial 100)",
+    "ylabel": "P&L / initial underlying notional (%)",
+    "title": "Three-month hedge mechanics \u00b7 European options; cash opportunity cost included"
+  },
+  "inputs": [
+    "Synthetic underlying 100; European put strike 90 and call strike 110; maturity 0.25 years; continuous rate 3%; dividend yield zero.",
+    "Black\u2013Scholes volatility assumptions 15%, 25%, 40%; no live option quotes. Each option leg costs 0.10 per 100 notional.",
+    "Premiums and fees are accrued at the assumed cash rate. P&L is incremental to cash opportunity cost, per underlying notional, not return on premium or margin."
+  ],
+  "limitation": "No options are held in the portfolio. Constant volatility and European exercise ignore smile, skew, jumps and early assignment. A real ETF hedge requires dividends, multipliers, expiry, liquidity, cash and tax records; an index proxy introduces basis risk. Expiry floors do not describe interim mark-to-market or liquidation risk."
+}
